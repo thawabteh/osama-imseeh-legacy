@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 12 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
+import { fadeInUp, withDelay } from "@/lib/animations";
 
 const posts = [
   {
@@ -41,11 +35,7 @@ const BlogSection = () => {
         <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
           Reflections
         </motion.p>
-        <motion.h2
-          {...fadeInUp}
-          transition={{ ...fadeInUp.transition, delay: 0.1 }}
-          className="section-heading text-foreground max-w-2xl mb-16"
-        >
+        <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-2xl mb-16">
           Insights & <span className="text-primary">Perspectives</span>
         </motion.h2>
 
@@ -54,7 +44,7 @@ const BlogSection = () => {
             <motion.article
               key={post.title}
               {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.1 * i }}
+              transition={withDelay(0.1 * i)}
               className="bg-surface p-8 md:p-10 group cursor-pointer hover:bg-card transition-colors duration-500"
             >
               <div className="flex items-center gap-4 mb-6">

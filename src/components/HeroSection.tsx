@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
+import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import heroPortrait from "@/assets/hero-portrait.jpg";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 12 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const HeroSection = () => {
   return (
@@ -17,10 +11,11 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: quinticEase }}
             className="relative order-2 lg:order-1 flex justify-center"
           >
-            <div className="relative w-[320px] md:w-[400px] lg:w-full max-w-[500px] aspect-[4/5] overflow-hidden"
+            <div
+              className="relative w-[320px] md:w-[400px] lg:w-full max-w-[500px] aspect-[4/5] overflow-hidden"
               style={{ boxShadow: "var(--shadow-gold)" }}
             >
               <img
@@ -29,42 +24,23 @@ const HeroSection = () => {
                 className="w-full h-full object-cover grayscale"
                 loading="eager"
               />
-              {/* Gold accent line */}
               <div className="absolute bottom-0 left-0 w-full h-px gold-gradient" />
             </div>
           </motion.div>
 
           {/* Right: Text */}
           <div className="order-1 lg:order-2 flex flex-col justify-center">
-            <motion.p
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.2 }}
-              className="label-caps text-primary mb-6"
-            >
+            <motion.p {...fadeInUp} transition={withDelay(0.2)} className="label-caps text-primary mb-6">
               Leadership · Vision · Legacy
             </motion.p>
-            <motion.h1
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.4 }}
-              className="section-heading text-foreground"
-            >
-              The Architecture
-              <br />
-              <span className="text-primary">of Vision</span>
+            <motion.h1 {...fadeInUp} transition={withDelay(0.4)} className="section-heading text-foreground">
+              The Architecture<br /><span className="text-primary">of Vision</span>
             </motion.h1>
-            <motion.p
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.6 }}
-              className="text-muted-foreground text-lg max-w-md mb-10 leading-relaxed"
-            >
-              Three decades of transformative leadership across twelve key sectors, 
+            <motion.p {...fadeInUp} transition={withDelay(0.6)} className="text-muted-foreground text-lg max-w-md mb-10 leading-relaxed">
+              Three decades of transformative leadership across twelve key sectors,
               shaping the future of Jordan's economic landscape.
             </motion.p>
-            <motion.div
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.8 }}
-              className="flex gap-12"
-            >
+            <motion.div {...fadeInUp} transition={withDelay(0.8)} className="flex gap-12">
               {[
                 { value: "30+", label: "Years" },
                 { value: "12", label: "Sectors" },
@@ -80,7 +56,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
