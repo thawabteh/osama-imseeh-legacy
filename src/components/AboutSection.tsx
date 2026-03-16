@@ -8,38 +8,37 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-6">
         <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
-          The Vision
+          الرؤية
         </motion.p>
         <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-3xl">
-          A Legacy Built on<br /><span className="text-primary">Conviction</span>
+          إرثٌ بُني على
+          <br /><span className="text-primary">القناعة والعزيمة</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
           <motion.div {...fadeInUp} transition={withDelay(0.2)}>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Osama Imseeh's journey began with a singular conviction: that strategic 
-              vision, when coupled with unwavering integrity, can transform not just 
-              businesses, but entire economies. Over three decades, this conviction has 
-              materialized into a legacy that spans twelve sectors of Jordan's economy.
+            <p className="text-muted-foreground text-xl leading-relaxed mb-8">
+              بدأت مسيرة أسامة إمسيح بقناعة راسخة: أن الرؤية الاستراتيجية حين تقترن 
+              بالنزاهة الراسخة، قادرة على تحويل ليس فقط المؤسسات، بل اقتصادات بأكملها. 
+              على مدار ثلاثة عقود، تجسّدت هذه القناعة في إرث يمتد عبر اثني عشر قطاعاً 
+              من قطاعات الاقتصاد الأردني.
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              From pioneering investments in emerging technologies to championing 
-              sustainable development initiatives, his approach has consistently 
-              prioritized long-term value creation over short-term gains — a philosophy 
-              that has earned him the trust of governments, international institutions, 
-              and fellow visionaries.
+            <p className="text-muted-foreground text-xl leading-relaxed">
+              من الاستثمارات الرائدة في التقنيات الناشئة إلى تبني مبادرات التنمية 
+              المستدامة، اتسم نهجه دائماً بتغليب بناء القيمة طويلة الأمد على المكاسب 
+              الآنية — وهي فلسفة أكسبته ثقة الحكومات والمؤسسات الدولية وروّاد الأعمال.
             </p>
           </motion.div>
 
           <motion.div {...fadeInUp} transition={withDelay(0.3)} className="space-y-8">
             {[
-              { title: "Strategic Investment", desc: "Identifying and nurturing transformative opportunities across diverse sectors." },
-              { title: "Public Service", desc: "Contributing to policy frameworks that strengthen Jordan's economic foundation." },
-              { title: "Mentorship", desc: "Cultivating the next generation of leaders through hands-on guidance and support." },
+              { title: "الاستثمار الاستراتيجي", desc: "اكتشاف ورعاية الفرص التحويلية عبر قطاعات متنوعة." },
+              { title: "الخدمة العامة", desc: "المساهمة في صياغة سياسات تعزز الأساس الاقتصادي للأردن." },
+              { title: "التوجيه والإرشاد", desc: "تنمية الجيل القادم من القادة من خلال التوجيه المباشر والدعم." },
             ].map((item) => (
               <div key={item.title} className="card-surface p-8">
-                <h3 className="font-serif text-2xl text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                <h3 className="font-serif text-3xl text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </motion.div>

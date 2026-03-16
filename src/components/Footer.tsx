@@ -2,14 +2,14 @@ const Footer = () => {
   return (
     <footer className="py-12 bg-background border-t border-primary/10">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="font-serif text-lg text-foreground">Osama Imseeh</p>
+        <p className="font-serif text-xl text-foreground">أسامة إمسيح</p>
         <div className="flex items-center gap-8">
-          {["LinkedIn", "Twitter", "Instagram"].map((s) => (
+          {["لينكدإن", "تويتر", "إنستغرام"].map((s) => (
             <a key={s} href="#" className="nav-link link-underline">{s}</a>
           ))}
         </div>
-        <p className="text-muted-foreground text-xs">
-          © {new Date().getFullYear()} All rights reserved.
+        <p className="text-muted-foreground text-sm">
+          © {new Date().getFullYear()} جميع الحقوق محفوظة.
         </p>
       </div>
     </footer>

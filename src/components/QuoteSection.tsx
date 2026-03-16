@@ -19,11 +19,11 @@ const QuoteSection = () => {
             transition={{ duration: 0.6, ease: quinticEase }}
           >
             <div className="w-16 h-px gold-gradient mx-auto mb-12" />
-            <blockquote className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground leading-tight italic mb-10">
-              "True leadership is not measured by the power you accumulate, but by the
-              <span className="text-primary"> futures you enable.</span>"
+            <blockquote className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-10">
+              "القيادة الحقيقية لا تُقاس بالسلطة التي تجمعها،
+              <span className="text-primary"> بل بالمستقبل الذي تصنعه.</span>"
             </blockquote>
-            <p className="label-caps text-primary">Osama Imseeh</p>
+            <p className="label-caps text-primary text-lg">أسامة إمسيح</p>
             <div className="w-16 h-px gold-gradient mx-auto mt-12" />
           </motion.div>
         </div>

@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { fadeInUp, fadeInScale, withDelay, quinticEase } from "@/lib/animations";
+import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 
 const images = [
-  { src: gallery1, alt: "Amman cityscape at golden hour", span: "md:col-span-2 md:row-span-1" },
-  { src: gallery2, alt: "Executive boardroom", span: "md:col-span-1 md:row-span-2" },
-  { src: gallery3, alt: "Formal business event", span: "md:col-span-2 md:row-span-1" },
+  { src: gallery1, alt: "أفق عمّان عند الغروب", span: "md:col-span-2 md:row-span-1" },
+  { src: gallery2, alt: "قاعة اجتماعات تنفيذية", span: "md:col-span-1 md:row-span-2" },
+  { src: gallery3, alt: "حدث رسمي", span: "md:col-span-2 md:row-span-1" },
 ];
 
 const GallerySection = () => {
@@ -15,10 +15,10 @@ const GallerySection = () => {
     <section id="gallery" className="py-32 bg-background">
       <div className="container mx-auto px-6">
         <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
-          Milestones
+          محطات بارزة
         </motion.p>
         <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-2xl mb-16">
-          A Life in <span className="text-primary">Service</span>
+          حياة في <span className="text-primary">خدمة الوطن</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
