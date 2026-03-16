@@ -16,7 +16,7 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
           <motion.div {...fadeInUp} transition={withDelay(0.2)}>
-            <p className="text-muted-foreground text-xl leading-[2] mb-8">
+            <p className="text-muted-foreground text-2xl md:text-3xl leading-[2] mb-8">
               "النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان، 
               انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي 
               لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام، 
@@ -31,8 +31,8 @@ const AboutSection = () => {
               { title: "التوجيه والإرشاد", desc: "تنمية الجيل القادم من القادة من خلال التوجيه المباشر والدعم." },
             ].map((item) => (
               <div key={item.title} className="card-surface p-8">
-                <h3 className="font-serif text-3xl text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">{item.desc}</p>
+                <h3 className="font-serif text-4xl text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground text-2xl leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </motion.div>

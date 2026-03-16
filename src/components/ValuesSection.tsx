@@ -41,7 +41,7 @@ const ValuesSection = () => {
               <span className="font-serif text-6xl md:text-7xl text-primary/20 block mb-6">
                 {item.number}
               </span>
-              <h3 className="font-serif text-3xl text-foreground mb-4">{item.title}</h3>
+              <h3 className="font-serif text-4xl text-foreground mb-4">{item.title}</h3>
               <div className="w-10 h-px gold-gradient mb-6" />
               <p className="text-muted-foreground text-xl leading-relaxed">{item.desc}</p>
             </motion.div>

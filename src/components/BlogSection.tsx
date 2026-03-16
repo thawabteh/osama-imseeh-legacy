@@ -43,8 +43,8 @@ const BlogSection = () => {
               <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-4 group-hover:text-primary transition-colors duration-300 leading-snug">
                 {post.title}
               </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">{post.excerpt}</p>
-              <span className="label-caps text-primary text-[12px] link-underline">
+              <p className="text-muted-foreground text-2xl leading-relaxed mb-6">{post.excerpt}</p>
+              <span className="label-caps text-primary text-lg link-underline">
                 اكتشف المزيد
               </span>
             </motion.article>
