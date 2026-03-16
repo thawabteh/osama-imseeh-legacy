@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import heroPortrait from "@/assets/hero-portrait.png";
 
 const HeroSection = () => {
   return (
