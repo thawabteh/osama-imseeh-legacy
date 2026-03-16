@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-2xl text-foreground" style={{ fontFamily: "'Lateef', serif" }}>أسامة إمسيح</p>
         <div className="flex items-center gap-8">
-          {["لينكدإن", "تويتر", "إنستغرام"].map((s) =>
+          {["لينكدإن", "فيسبوك", "إنستغرام"].map((s) =>
           <a key={s} className="nav-link link-underline" href="https://www.facebook.com/osama.imseeh.1/">{s}</a>
           )}
         </div>
