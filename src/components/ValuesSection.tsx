@@ -43,7 +43,7 @@ const ValuesSection = () => {
               </span>
               <h3 className="font-serif text-4xl text-foreground mb-4">{item.title}</h3>
               <div className="w-10 h-px gold-gradient mb-6" />
-              <p className="text-muted-foreground text-xl leading-relaxed">{item.desc}</p>
+              <p className="text-muted-foreground text-2xl leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

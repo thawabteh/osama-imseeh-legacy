@@ -37,7 +37,7 @@ const HeroSection = () => {
               أسامة إمسيح: إرثٌ من التميز
               <br /><span className="text-primary">ورؤية للمستقبل</span>
             </motion.h1>
-            <motion.p {...fadeInUp} transition={withDelay(0.6)} className="text-muted-foreground text-xl max-w-lg mb-10 leading-relaxed">
+            <motion.p {...fadeInUp} transition={withDelay(0.6)} className="text-muted-foreground text-2xl md:text-3xl max-w-lg mb-10 leading-relaxed">
               محطات في القيادة، موروث الأصالة، ورؤى تجمع بين عراقة الماضي وطموح الغد.
             </motion.p>
             <motion.div {...fadeInUp} transition={withDelay(0.8)} className="flex gap-12">

@@ -36,9 +36,9 @@ const BlogSection = () => {
               className="bg-surface p-8 md:p-10 group cursor-pointer hover:bg-card transition-colors duration-500"
             >
               <div className="flex items-center gap-4 mb-6">
-                <span className="label-caps text-muted-foreground text-[12px]">{post.date}</span>
+                <span className="label-caps text-muted-foreground text-lg">{post.date}</span>
                 <span className="w-1 h-1 bg-primary" />
-                <span className="label-caps text-primary text-[12px]">{post.category}</span>
+                <span className="label-caps text-primary text-lg">{post.category}</span>
               </div>
               <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-4 group-hover:text-primary transition-colors duration-300 leading-snug">
                 {post.title}

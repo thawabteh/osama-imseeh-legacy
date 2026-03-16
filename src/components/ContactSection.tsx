@@ -52,7 +52,7 @@ const ContactSection = () => {
               </div>
             ))}
             <div>
-              <label className="label-caps text-muted-foreground text-[12px] mb-2 block">الرسالة</label>
+              <label className="label-caps text-muted-foreground text-lg mb-2 block">الرسالة</label>
               <textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
