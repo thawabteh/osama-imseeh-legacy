@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
 import { fadeInUp, withDelay } from "@/lib/animations";
+import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const AboutSection = () => {
   return (
     <section id="about" className="relative py-32 bg-background overflow-hidden">
+      {/* صورة خلفية */}
+      <div className="absolute inset-0">
+        <img
+          src={heroPortrait}
+          alt=""
+          className="w-full h-full object-cover opacity-[0.07]"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-background via-background/95 to-background/80" />
+      </div>
       <div className="absolute left-1/2 top-0 bottom-0 gold-thread opacity-30 hidden lg:block" />
 
       <div className="container mx-auto px-6">
