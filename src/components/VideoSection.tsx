@@ -9,18 +9,18 @@ const VideoSection = () => {
           {/* النص */}
           <div>
             <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
-              من الميدان
+              أسامة إمسيح
             </motion.p>
             <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-xl mb-8">
-              رسائل <span className="text-primary">ملهمة</span>
+              من <span className="text-primary">القلب</span>
             </motion.h2>
             <motion.p {...fadeInUp} transition={withDelay(0.2)} className="text-muted-foreground text-2xl md:text-3xl leading-relaxed max-w-lg mb-10">
-              لحظات حقيقية من محاضرات ولقاءات أسامة إمسيح، حيث يشارك خبراته ورؤاه مع الأجيال القادمة.
+              كلمات صادقة ولحظات عفوية تعكس شغف أسامة إمسيح بصناعة الأثر وإلهام من حوله.
             </motion.p>
             <motion.div {...fadeInUp} transition={withDelay(0.3)} className="flex gap-12">
               {[
-                { value: "كن شغوفاً", label: "بالحياة" },
-                { value: "إسمع", label: "لأستاذك" },
+                { value: "شغف", label: "لا ينطفئ" },
+                { value: "أثر", label: "يدوم" },
               ].map((item) => (
                 <div key={item.label} className="text-center">
                   <p className="font-serif text-3xl md:text-4xl text-primary">{item.value}</p>
