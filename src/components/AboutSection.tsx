@@ -8,25 +8,19 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-6">
         <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
-          الرؤية
+          سيرة ومسيرة
         </motion.p>
         <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-3xl">
-          إرثٌ بُني على
-          <br /><span className="text-primary">القناعة والعزيمة</span>
+          عن <span className="text-primary">أسامة</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
           <motion.div {...fadeInUp} transition={withDelay(0.2)}>
-            <p className="text-muted-foreground text-xl leading-relaxed mb-8">
-              بدأت مسيرة أسامة إمسيح بقناعة راسخة: أن الرؤية الاستراتيجية حين تقترن 
-              بالنزاهة الراسخة، قادرة على تحويل ليس فقط المؤسسات، بل اقتصادات بأكملها. 
-              على مدار ثلاثة عقود، تجسّدت هذه القناعة في إرث يمتد عبر اثني عشر قطاعاً 
-              من قطاعات الاقتصاد الأردني.
-            </p>
-            <p className="text-muted-foreground text-xl leading-relaxed">
-              من الاستثمارات الرائدة في التقنيات الناشئة إلى تبني مبادرات التنمية 
-              المستدامة، اتسم نهجه دائماً بتغليب بناء القيمة طويلة الأمد على المكاسب 
-              الآنية — وهي فلسفة أكسبته ثقة الحكومات والمؤسسات الدولية وروّاد الأعمال.
+            <p className="text-muted-foreground text-xl leading-[2] mb-8">
+              "النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان، 
+              انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي 
+              لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام، 
+              ورؤى استشرف بها المستقبل."
             </p>
           </motion.div>
 
