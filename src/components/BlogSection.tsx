@@ -3,28 +3,16 @@ import { fadeInUp, withDelay } from "@/lib/animations";
 
 const posts = [
   {
-    date: "مارس ٢٠٢٦",
-    category: "اقتصاد",
-    title: "مستقبل الاقتصاد الرقمي في الأردن",
-    excerpt: "قراءة في الدور المحوري لتبنّي التكنولوجيا في تحويل المسار الاقتصادي للمملكة الأردنية الهاشمية.",
+    date: "٢٠٢٦",
+    category: "تأملات",
+    title: "كيف تصل إلى الملكوت؟",
+    excerpt: "تأمل روحي عميق في رحلة الإنسان نحو السمو والمعنى الحقيقي للوصول.",
   },
   {
-    date: "فبراير ٢٠٢٦",
-    category: "قيادة",
-    title: "في هندسة النمو المستدام",
-    excerpt: "لماذا يتطلب بناء القيمة طويلة الأمد نهجاً مختلفاً جذرياً في صنع القرار الاستراتيجي.",
-  },
-  {
-    date: "يناير ٢٠٢٦",
-    category: "استثمار",
-    title: "الأسواق الناشئة وشجاعة القناعة",
-    excerpt: "دروس من ثلاثة عقود في اكتشاف الفرص التحويلية في بيئات مليئة بالتحديات.",
-  },
-  {
-    date: "ديسمبر ٢٠٢٥",
-    category: "رؤية",
-    title: "بناء الجسور: الشرق يلتقي بالغرب في التجارة",
-    excerpt: "كيف تُعيد الشراكات العابرة للثقافات تشكيل مشهد التجارة والاستثمار الدولي.",
+    date: "٢٠٢٦",
+    category: "تأملات",
+    title: "«وأنتم من تقولون إني أنا؟»",
+    excerpt: "سؤال جوهري يدعونا للتوقف والتأمل في هويتنا الحقيقية ومعنى وجودنا.",
   },
 ];
 
@@ -33,10 +21,10 @@ const BlogSection = () => {
     <section id="blog" className="py-32 bg-surface">
       <div className="container mx-auto px-6">
         <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
-          تأملات
+          مدونة
         </motion.p>
         <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-2xl mb-16">
-          رؤى <span className="text-primary">ومنظورات</span>
+          تأملات في <span className="text-primary">القيادة والحياة</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-primary/10">
