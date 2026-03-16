@@ -5,8 +5,8 @@ import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 
 const images = [
-  { src: gallery1, alt: "أفق عمّان عند الغروب", span: "md:col-span-2 md:row-span-1" },
-  { src: gallery2, alt: "قاعة اجتماعات تنفيذية", span: "md:col-span-1 md:row-span-2" },
+  { src: gallery1, alt: "أسامة إمسيح في محاضرة - كن شغوفاً بالحياة", span: "md:col-span-2 md:row-span-1" },
+  { src: gallery2, alt: "أسامة إمسيح في محاضرة - إسمع لأستاذك", span: "md:col-span-1 md:row-span-2" },
   { src: gallery3, alt: "حدث رسمي", span: "md:col-span-2 md:row-span-1" },
 ];
 
