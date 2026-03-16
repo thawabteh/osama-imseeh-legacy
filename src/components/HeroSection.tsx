@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
-import heroPortrait from "@/assets/hero-portrait.png";
+import heroPortrait from "@/assets/portrait-hero.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center min-h-screen py-24">
           {/* الصورة */}
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
@@ -15,15 +15,16 @@ const HeroSection = () => {
             className="relative order-2 lg:order-2 flex justify-center"
           >
             <div
-              className="relative w-[320px] md:w-[400px] lg:w-full max-w-[500px] aspect-[4/5] overflow-hidden"
+              className="relative w-[320px] md:w-[420px] lg:w-full max-w-[520px] aspect-[4/5] overflow-hidden rounded-[2rem]"
               style={{ boxShadow: "var(--shadow-gold)" }}
             >
               <img
                 src={heroPortrait}
                 alt="صورة أسامة إمسيح"
-                className="w-full h-full object-cover grayscale"
+                className="w-full h-full object-cover"
                 loading="eager"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/25 to-transparent" />
               <div className="absolute bottom-0 right-0 w-full h-px gold-gradient" />
             </div>
           </motion.div>
@@ -35,7 +36,8 @@ const HeroSection = () => {
             </motion.p>
             <motion.h1 {...fadeInUp} transition={withDelay(0.4)} className="section-heading text-foreground">
               أسامة إمسيح: إرثٌ من التميز
-              <br /><span className="text-primary">ورؤية للمستقبل</span>
+              <br />
+              <span className="text-primary">ورؤية للمستقبل</span>
             </motion.h1>
             <motion.p {...fadeInUp} transition={withDelay(0.6)} className="text-muted-foreground text-2xl md:text-3xl max-w-lg mb-10 leading-relaxed">
               محطات في القيادة، موروث الأصالة، ورؤى تجمع بين عراقة الماضي وطموح الغد.
