@@ -47,8 +47,8 @@ const HeroSection = () => {
                 { value: "1", label: "إرث" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="font-serif text-4xl md:text-5xl text-primary">{stat.value}</p>
-                  <p className="label-caps text-muted-foreground mt-1">{stat.label}</p>
+                  <p className="font-serif text-5xl md:text-6xl text-primary">{stat.value}</p>
+                  <p className="label-caps text-muted-foreground mt-1 text-xl">{stat.label}</p>
                 </div>
               ))}
             </motion.div>

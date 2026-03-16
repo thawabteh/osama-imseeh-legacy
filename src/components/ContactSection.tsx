@@ -63,7 +63,7 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="label-caps text-[13px] text-primary-foreground gold-gradient px-10 py-4 mt-4 hover:opacity-90 transition-opacity duration-300"
+              className="label-caps text-xl text-primary-foreground gold-gradient px-10 py-4 mt-4 hover:opacity-90 transition-opacity duration-300"
             >
               إرسال الرسالة
             </button>

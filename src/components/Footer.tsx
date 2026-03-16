@@ -8,7 +8,7 @@ const Footer = () => {
             <a key={s} href="#" className="nav-link link-underline">{s}</a>
           ))}
         </div>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-muted-foreground text-lg">
           © {new Date().getFullYear()} جميع الحقوق محفوظة.
         </p>
       </div>
