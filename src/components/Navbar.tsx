@@ -30,7 +30,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <a href="#" className="text-2xl text-foreground" style={{ fontFamily: "'Lateef', serif" }}>
+        <a href="#" className="text-4xl text-foreground" style={{ fontFamily: "'Lateef', serif" }}>
           أسامة إمسيح
         </a>
 
