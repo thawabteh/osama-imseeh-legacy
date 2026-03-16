@@ -41,7 +41,7 @@ const ContactSection = () => {
               { name: "email" as const, label: "البريد الإلكتروني", type: "email" },
             ]).map((field) => (
               <div key={field.name}>
-                <label className="label-caps text-muted-foreground text-[12px] mb-2 block">{field.label}</label>
+                <label className="label-caps text-muted-foreground text-lg mb-2 block">{field.label}</label>
                 <input
                   type={field.type}
                   value={formData[field.name]}
@@ -52,7 +52,7 @@ const ContactSection = () => {
               </div>
             ))}
             <div>
-              <label className="label-caps text-muted-foreground text-[12px] mb-2 block">الرسالة</label>
+              <label className="label-caps text-muted-foreground text-lg mb-2 block">الرسالة</label>
               <textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -63,7 +63,7 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="label-caps text-[13px] text-primary-foreground gold-gradient px-10 py-4 mt-4 hover:opacity-90 transition-opacity duration-300"
+              className="label-caps text-xl text-primary-foreground gold-gradient px-10 py-4 mt-4 hover:opacity-90 transition-opacity duration-300"
             >
               إرسال الرسالة
             </button>

@@ -23,7 +23,7 @@ const QuoteSection = () => {
               "القيادة الحقيقية لا تُقاس بالسلطة التي تجمعها،
               <span className="text-primary"> بل بالمستقبل الذي تصنعه.</span>"
             </blockquote>
-            <p className="label-caps text-primary text-lg">أسامة إمسيح</p>
+            <p className="label-caps text-primary text-2xl">أسامة إمسيح</p>
             <div className="w-16 h-px gold-gradient mx-auto mt-12" />
           </motion.div>
         </div>
