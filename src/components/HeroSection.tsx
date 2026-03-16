@@ -34,11 +34,16 @@ const HeroSection = () => {
               Leadership · Vision · Legacy
             </motion.p>
             <motion.h1 {...fadeInUp} transition={withDelay(0.4)} className="section-heading text-foreground">
-              The Architecture<br /><span className="text-primary">of Vision</span>
+              Osama Imseeh: A Legacy of<br /><span className="text-primary">Excellence & Vision</span>
             </motion.h1>
-            <motion.p {...fadeInUp} transition={withDelay(0.6)} className="text-muted-foreground text-lg max-w-md mb-10 leading-relaxed">
-              Three decades of transformative leadership across twelve key sectors,
-              shaping the future of Jordan's economic landscape.
+            <motion.p {...fadeInUp} transition={withDelay(0.5)} className="font-serif text-xl md:text-2xl text-foreground/70 italic max-w-lg mb-4" dir="rtl">
+              أسامة إمسيح: إرثٌ من التميز.. ورؤية للمستقبل
+            </motion.p>
+            <motion.p {...fadeInUp} transition={withDelay(0.6)} className="text-muted-foreground text-lg max-w-md mb-4 leading-relaxed">
+              Exploring the intersection of business leadership, cultural heritage, and personal insights.
+            </motion.p>
+            <motion.p {...fadeInUp} transition={withDelay(0.65)} className="text-muted-foreground text-base max-w-md mb-10 leading-relaxed" dir="rtl">
+              محطات في القيادة، موروث الأصالة، ورؤى تجمع بين عراقة الماضي وطموح الغد.
             </motion.p>
             <motion.div {...fadeInUp} transition={withDelay(0.8)} className="flex gap-12">
               {[
