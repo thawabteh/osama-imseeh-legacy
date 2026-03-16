@@ -1,7 +1,19 @@
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Volume2, VolumeX } from "lucide-react";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 
 const VideoSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <section id="video" className="py-32 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-6">
@@ -43,6 +55,7 @@ const VideoSection = () => {
               style={{ boxShadow: "var(--shadow-gold)" }}
             >
               <video
+                ref={videoRef}
                 autoPlay
                 muted
                 loop
@@ -52,6 +65,14 @@ const VideoSection = () => {
               >
                 <source src="/videos/imseeh-video.mp4" type="video/mp4" />
               </video>
+              {/* زر الصوت */}
+              <button
+                onClick={toggleMute}
+                className="absolute bottom-4 left-4 z-10 bg-background/70 backdrop-blur-sm border border-primary/30 rounded-full p-2.5 text-primary transition-colors hover:bg-background/90"
+                aria-label={isMuted ? "تشغيل الصوت" : "كتم الصوت"}
+              >
+                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+              </button>
               <div className="absolute bottom-0 right-0 w-full h-px gold-gradient" />
             </div>
           </motion.div>
