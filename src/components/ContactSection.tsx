@@ -25,8 +25,8 @@ const ContactSection = () => {
             <motion.div {...fadeInUp} transition={withDelay(0.3)} className="mt-12 space-y-4">
               {[
               { label: "لينكدإن", href: "#" },
-              { label: "تويتر", href: "#" },
-              { label: "البريد الإلكتروني", href: "#" }].
+              { label: "انستاقرام", href: "#" },
+              { label: "فيسبوك", href: "#" }].
               map((platform) =>
               <a key={platform.label} href={platform.href} className="block nav-link link-underline w-fit">
                   {platform.label}
