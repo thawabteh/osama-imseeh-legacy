@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { label: "Vision", href: "#about" },
-  { label: "Reflections", href: "#blog" },
-  { label: "Milestones", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "الرؤية", href: "#about" },
+  { label: "تأملات", href: "#blog" },
+  { label: "محطات", href: "#gallery" },
+  { label: "تواصل", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-primary/10"
@@ -30,11 +30,10 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <a href="#" className="font-serif text-xl text-foreground tracking-wide">
-          Osama Imseeh
+        <a href="#" className="font-serif text-2xl text-foreground">
+          أسامة إمسيح
         </a>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <a key={item.label} href={item.href} className="nav-link link-underline">
@@ -43,11 +42,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          aria-label="القائمة"
         >
           <div className="space-y-1.5">
             <span className={`block w-6 h-px bg-foreground transition-transform duration-300 ${mobileOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
@@ -57,7 +55,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}

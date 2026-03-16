@@ -14,25 +14,34 @@ const ContactSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
-            <motion.p {...fadeInUp} className="label-caps text-primary mb-4">Connect</motion.p>
+            <motion.p {...fadeInUp} className="label-caps text-primary mb-4">تواصل</motion.p>
             <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-md">
-              Begin the <span className="text-primary">Conversation</span>
+              ابدأ <span className="text-primary">الحوار</span>
             </motion.h2>
-            <motion.p {...fadeInUp} transition={withDelay(0.2)} className="text-muted-foreground text-lg leading-relaxed max-w-md mt-6">
-              For inquiries regarding speaking engagements, investment partnerships,
-              or media requests, please reach out through the form or the channels below.
+            <motion.p {...fadeInUp} transition={withDelay(0.2)} className="text-muted-foreground text-xl leading-relaxed max-w-md mt-6">
+              للاستفسارات المتعلقة بالمشاركات التحدثية، أو الشراكات الاستثمارية، 
+              أو الطلبات الإعلامية، يُرجى التواصل عبر النموذج أو القنوات أدناه.
             </motion.p>
             <motion.div {...fadeInUp} transition={withDelay(0.3)} className="mt-12 space-y-4">
-              {["LinkedIn", "Twitter", "Email"].map((platform) => (
-                <a key={platform} href="#" className="block nav-link link-underline w-fit">{platform}</a>
+              {[
+                { label: "لينكدإن", href: "#" },
+                { label: "تويتر", href: "#" },
+                { label: "البريد الإلكتروني", href: "#" },
+              ].map((platform) => (
+                <a key={platform.label} href={platform.href} className="block nav-link link-underline w-fit">
+                  {platform.label}
+                </a>
               ))}
             </motion.div>
           </div>
 
           <motion.form {...fadeInUp} transition={withDelay(0.2)} onSubmit={handleSubmit} className="space-y-6">
-            {([{ name: "name" as const, label: "Name", type: "text" }, { name: "email" as const, label: "Email", type: "email" }]).map((field) => (
+            {([
+              { name: "name" as const, label: "الاسم", type: "text" },
+              { name: "email" as const, label: "البريد الإلكتروني", type: "email" },
+            ]).map((field) => (
               <div key={field.name}>
-                <label className="label-caps text-muted-foreground text-[10px] mb-2 block">{field.label}</label>
+                <label className="label-caps text-muted-foreground text-[12px] mb-2 block">{field.label}</label>
                 <input
                   type={field.type}
                   value={formData[field.name]}
@@ -43,7 +52,7 @@ const ContactSection = () => {
               </div>
             ))}
             <div>
-              <label className="label-caps text-muted-foreground text-[10px] mb-2 block">Message</label>
+              <label className="label-caps text-muted-foreground text-[12px] mb-2 block">الرسالة</label>
               <textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -54,9 +63,9 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="label-caps text-[10px] text-primary-foreground gold-gradient px-10 py-4 mt-4 hover:opacity-90 transition-opacity duration-300"
+              className="label-caps text-[13px] text-primary-foreground gold-gradient px-10 py-4 mt-4 hover:opacity-90 transition-opacity duration-300"
             >
-              Send Message
+              إرسال الرسالة
             </button>
           </motion.form>
         </div>
