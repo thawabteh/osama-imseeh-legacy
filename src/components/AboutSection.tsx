@@ -16,7 +16,7 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
           <motion.div {...fadeInUp} transition={withDelay(0.2)}>
-            <p className="text-muted-foreground text-xl leading-[2] mb-8">
+            <p className="text-muted-foreground text-2xl md:text-3xl leading-[2] mb-8">
               "النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان، 
               انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي 
               لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام، 
