@@ -31,8 +31,8 @@ const AboutSection = () => {
               { title: "التوجيه والإرشاد", desc: "تنمية الجيل القادم من القادة من خلال التوجيه المباشر والدعم." },
             ].map((item) => (
               <div key={item.title} className="card-surface p-8">
-                <h3 className="font-serif text-3xl text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">{item.desc}</p>
+                <h3 className="font-serif text-4xl text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground text-2xl leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </motion.div>
