@@ -18,7 +18,7 @@ const ContactSection = () => {
             <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-md">
               ابدأ <span className="text-primary">الحوار</span>
             </motion.h2>
-            <motion.p {...fadeInUp} transition={withDelay(0.2)} className="text-muted-foreground text-xl leading-relaxed max-w-md mt-6">
+            <motion.p {...fadeInUp} transition={withDelay(0.2)} className="text-muted-foreground text-2xl leading-relaxed max-w-md mt-6">
               للاستفسارات المتعلقة بالمشاركات التحدثية، أو الشراكات الاستثمارية، 
               أو الطلبات الإعلامية، يُرجى التواصل عبر النموذج أو القنوات أدناه.
             </motion.p>
