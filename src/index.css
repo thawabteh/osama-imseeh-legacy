@@ -90,8 +90,7 @@
 
   body {
     @apply text-foreground;
-    background: var(--page-gradient);
-    background-attachment: fixed;
+    background: hsl(197, 55%, 10%);
     font-family: 'Lateef', serif;
     font-weight: 400;
     line-height: 1.9;
