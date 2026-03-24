@@ -16,7 +16,7 @@ const images = [gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8, gp9, gp10];
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-32 teal-gradient-bg overflow-hidden relative">
+    <section id="gallery" className="py-32 overflow-hidden relative">
       {/* Decorative glow */}
       <div className="absolute top-20 left-1/3 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
 

@@ -18,7 +18,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-32 teal-gradient-bg overflow-hidden relative">
+    <section id="contact" className="py-32 overflow-hidden relative">
       {/* Decorative glows */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />

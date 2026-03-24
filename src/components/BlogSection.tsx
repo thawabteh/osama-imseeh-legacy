@@ -19,7 +19,7 @@ const posts = [
 
 const BlogSection = () => {
   return (
-    <section id="blog" className="py-32 teal-gradient-bg overflow-hidden relative">
+    <section id="blog" className="py-32 overflow-hidden relative">
       {/* Decorative glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
 
