@@ -43,18 +43,17 @@ const AboutSection = () => {
 
               {/* Scroll indicator */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.6, ease: quinticEase }}
+                transition={{ delay: 0.8, duration: 0.6 }}
                 className="mt-16 flex flex-col items-end gap-2"
               >
-                <span className="text-foreground/50 text-base" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
-                  scrolling motion
-                </span>
-                <span className="text-foreground/50 text-base" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
-                  tap on osama to new page
-                </span>
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-px h-10 gold-gradient"
+                />
               </motion.div>
             </div>
           </div>
