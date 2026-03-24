@@ -34,8 +34,8 @@ const VideoSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Text content - left side */}
-          <div className="order-2 lg:order-1">
+          {/* Text content - right side */}
+          <div className="order-2 lg:order-2 text-right">
             <motion.p
               {...fadeInUp}
               className="text-primary mb-3 text-xl md:text-2xl tracking-wide"
