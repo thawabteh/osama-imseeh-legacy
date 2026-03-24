@@ -30,7 +30,7 @@ const CountUp = ({ target, prefix, duration = 2 }: { target: number; prefix: str
 
 const StatsSection = () => {
   return (
-    <section className="py-32 md:py-40 overflow-hidden">
+    <section className="py-32 md:py-40 teal-gradient-bg overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-center gap-12 md:gap-24 lg:gap-32 flex-wrap">
           {stats.map((stat, i) => (

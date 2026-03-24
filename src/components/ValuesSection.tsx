@@ -9,7 +9,7 @@ const values = [
 
 const ValuesSection = () => {
   return (
-    <section id="values" className="py-32 overflow-hidden">
+    <section id="values" className="py-32 teal-gradient-bg overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.h2
           {...fadeInUp}

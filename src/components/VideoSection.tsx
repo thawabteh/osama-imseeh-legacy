@@ -15,7 +15,7 @@ const VideoSection = () => {
   };
 
   return (
-    <section id="video" className="py-32 overflow-hidden relative">
+    <section id="video" className="py-32 teal-gradient-bg overflow-hidden relative">
       {/* Decorative background elements */}
       <motion.div
         initial={{ opacity: 0 }}
