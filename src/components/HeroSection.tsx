@@ -18,12 +18,12 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-l from-background/80 via-background/40 to-transparent" />
       </div>
 
-      {/* Transparent cutout of Osama - same size/position as background */}
-      <div className="absolute inset-0 z-[5] pointer-events-none">
+      {/* Transparent cutout of Osama aligned to the background subject */}
+      <div className="absolute inset-y-0 left-0 z-[5] w-[58%] pointer-events-none md:w-[56%]">
         <img
           src={heroOverlay}
           alt="أسامة إمسيح"
-          className="w-full h-full object-cover object-left-top"
+          className="absolute bottom-0 left-[2%] w-full h-auto object-contain object-left-bottom"
           loading="eager"
         />
       </div>
