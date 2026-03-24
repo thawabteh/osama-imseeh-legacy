@@ -29,19 +29,19 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <a href="#" className="text-foreground text-5xl" style={{ fontFamily: "'Lateef', serif" }}>
+      <div className="container mx-auto flex items-center justify-between py-5 px-6" dir="rtl">
+        <a href="#" className="text-foreground text-4xl md:text-5xl font-bold" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
           أسامة إمسيح
         </a>
 
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item, i) => (
             <div key={item.label} className="flex items-center gap-6">
-              <a href={item.href} className="nav-link link-underline text-2xl">
+              <a href={item.href} className="nav-link link-underline text-2xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
                 {item.label}
               </a>
               {i < navItems.length - 1 && (
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <span className="w-2 h-2 rounded-full bg-primary" />
               )}
             </div>
           ))}
