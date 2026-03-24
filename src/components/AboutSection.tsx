@@ -38,7 +38,7 @@ const AboutSection = () => {
                 className="leading-tight mb-8"
                 style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
               >
-                <span className="text-primary text-7xl md:text-9xl block leading-relaxed mx-0 my-0 px-0">عــــــــن أسامة</span>
+                <span className="text-primary text-7xl md:text-9xl block leading-relaxed mx-0 my-0 px-0">عــــــــن<br/>أسامة</span>
               </motion.h2>
 
               {/* Scroll indicator */}
