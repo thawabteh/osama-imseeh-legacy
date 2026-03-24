@@ -1,31 +1,19 @@
 import { motion } from "framer-motion";
-import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
+import { fadeInUp, withDelay } from "@/lib/animations";
 import heroBg from "@/assets/hero-bg.png";
-import heroOverlay from "@/assets/hero-overlay.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image - full bleed */}
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt=""
-          className="w-full h-full object-cover object-left-top"
-          loading="eager"
-        />
-        {/* Subtle dark overlay for text readability on right */}
-        <div className="absolute inset-0 bg-gradient-to-l from-background/80 via-background/40 to-transparent" />
-      </div>
-
-      {/* Transparent cutout of Osama aligned to the background subject */}
-      <div className="absolute inset-y-0 left-0 z-[5] w-[58%] pointer-events-none md:w-[56%]">
-        <img
-          src={heroOverlay}
           alt="أسامة إمسيح"
-          className="absolute bottom-0 left-[2%] w-full h-auto object-contain object-left-bottom"
+          className="w-full h-full object-cover"
           loading="eager"
         />
+        <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/50 to-transparent" />
       </div>
 
       {/* Content overlay - right side */}
