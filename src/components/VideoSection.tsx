@@ -34,8 +34,8 @@ const VideoSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Text content - left side */}
-          <div className="order-2 lg:order-1">
+          {/* Text content - right side */}
+          <div className="order-2 lg:order-2 text-right">
             <motion.p
               {...fadeInUp}
               className="text-primary mb-3 text-xl md:text-2xl tracking-wide"
@@ -60,19 +60,19 @@ const VideoSection = () => {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: quinticEase, delay: 0.2 }}
-              className="w-20 h-px bg-primary/40 mb-8 origin-right"
+              className="w-20 h-px bg-primary/40 mb-8 origin-right mr-0 ml-auto"
             />
 
             <motion.p
               {...fadeInUp}
               transition={withDelay(0.2)}
-              className="text-foreground/70 text-xl md:text-2xl leading-[2] max-w-lg mb-12"
+              className="text-foreground/70 text-xl md:text-2xl leading-[2] max-w-lg mb-12 mr-0 ml-auto"
               style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
             >
               كلمات صادقة ولحظات عفوية تعكس شغف أسامة إمسيح بصناعة الأثر وإلهام من حوله.
             </motion.p>
 
-            <motion.div {...fadeInUp} transition={withDelay(0.3)} className="flex gap-16">
+            <motion.div {...fadeInUp} transition={withDelay(0.3)} className="flex gap-16 justify-end">
               {[
                 { value: "أثر", label: "يدوم" },
                 { value: "شغف", label: "لا ينطفئ" },
@@ -106,7 +106,7 @@ const VideoSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: quinticEase }}
-            className="flex justify-center order-1 lg:order-2"
+            className="flex justify-center order-1 lg:order-1"
           >
             <div className="relative group">
               {/* Glow behind video */}
