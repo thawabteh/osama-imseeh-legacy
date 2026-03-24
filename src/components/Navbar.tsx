@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item, i) => (
             <div key={item.label} className="flex items-center gap-6">
-              <a href={item.href} className="nav-link link-underline text-2xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
+              <a href={item.href} className="nav-link link-underline text-base" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
                 {item.label}
               </a>
               {i < navItems.length - 1 && (

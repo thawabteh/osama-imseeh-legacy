@@ -32,7 +32,7 @@ const HeroSection = () => {
             <motion.p
               {...fadeInUp}
               transition={withDelay(0.4)}
-              className="text-muted-foreground text-2xl md:text-4xl max-w-lg mr-auto leading-relaxed"
+              className="text-muted-foreground text-lg md:text-2xl max-w-lg mr-auto leading-relaxed"
               style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
             >
               محطات في القيادة، موروث الأصالة، ورؤى تجمع بين عراقة الماضي وطموح الغد.
