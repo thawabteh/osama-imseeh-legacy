@@ -10,21 +10,32 @@ import BlogSection from "@/components/BlogSection";
 import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+      <SectionDivider variant="fade" />
       <StatsSection />
+      <SectionDivider variant="ornament" />
       <AboutSection />
+      <SectionDivider variant="fade" />
       <ValuesSection />
+      <SectionDivider variant="ornament" />
       <QuoteSection />
+      <SectionDivider variant="fade" />
       <LibrarySection />
+      <SectionDivider variant="ornament" />
       <VideoSection />
+      <SectionDivider variant="fade" />
       <BlogSection />
+      <SectionDivider variant="ornament" />
       <GallerySection />
+      <SectionDivider variant="fade" />
       <ContactSection />
+      <SectionDivider variant="ornament" />
       <Footer />
     </div>
   );
