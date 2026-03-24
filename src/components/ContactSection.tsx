@@ -74,7 +74,7 @@ const ContactSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, ease: quinticEase, delay: 0.4 + 0.1 * i }}
-                  className="group flex items-center gap-3 w-fit py-2 text-foreground/70 transition-colors duration-300 hover:text-primary"
+                  className="group flex items-center gap-3 w-fit py-2 text-foreground/70 transition-colors duration-300 hover:text-primary mr-0 ml-auto flex-row-reverse"
                   style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
                 >
                   <ExternalLink className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
