@@ -61,9 +61,9 @@ const BlogSection = () => {
                 {/* Top glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/0 to-transparent group-hover:from-primary/8 transition-all duration-500 rounded-2xl" />
 
-                <div className="relative z-10">
+                <div className="relative z-10 text-right">
                   {/* Meta */}
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center gap-3 mb-6 justify-end">
                     <span
                       className="text-foreground/50 text-lg"
                       style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
