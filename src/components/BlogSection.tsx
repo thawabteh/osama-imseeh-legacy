@@ -25,8 +25,8 @@ const BlogSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="mb-20">
-          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4">
+        <div className="mb-20 text-right">
+          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-end">
             <Sparkles className="w-5 h-5 text-primary" />
             <p
               className="text-primary text-xl md:text-2xl"
@@ -61,9 +61,9 @@ const BlogSection = () => {
                 {/* Top glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/0 to-transparent group-hover:from-primary/8 transition-all duration-500 rounded-2xl" />
 
-                <div className="relative z-10">
+                <div className="relative z-10 text-right">
                   {/* Meta */}
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center gap-3 mb-6 justify-end">
                     <span
                       className="text-foreground/50 text-lg"
                       style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
@@ -88,7 +88,7 @@ const BlogSection = () => {
                   </h3>
 
                   {/* Decorative line */}
-                  <div className="w-12 h-px bg-primary/30 mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-primary/60" />
+                  <div className="w-12 h-px bg-primary/30 mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-primary/60 mr-0 ml-auto" />
 
                   {/* Excerpt */}
                   <p
@@ -99,7 +99,7 @@ const BlogSection = () => {
                   </p>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-primary transition-all duration-300 group-hover:gap-4">
+                  <div className="flex items-center gap-2 text-primary transition-all duration-300 group-hover:gap-4 justify-end">
                     <span
                       className="text-lg"
                       style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
