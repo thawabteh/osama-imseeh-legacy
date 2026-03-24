@@ -70,6 +70,7 @@
     --sidebar-ring: 25 80% 55%;
 
     --teal-gradient: linear-gradient(135deg, hsl(197, 55%, 12%), hsl(195, 45%, 20%), hsl(197, 55%, 14%));
+    --page-gradient: linear-gradient(160deg, hsl(197, 55%, 10%) 0%, hsl(195, 45%, 18%) 50%, hsl(197, 50%, 14%) 100%);
     --shadow-teal: 0 0 0 1px hsla(195, 30%, 30%, 0.3);
     --shadow-lift: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
     --nav-blur: blur(12px);
@@ -77,12 +78,20 @@
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: var(--page-gradient);
+    background-attachment: fixed;
     font-family: 'Lateef', serif;
     font-weight: 400;
     line-height: 1.9;
@@ -159,7 +168,7 @@
   }
 
   .teal-gradient-bg {
-    background: linear-gradient(160deg, hsl(197, 55%, 10%) 0%, hsl(195, 45%, 18%) 50%, hsl(197, 50%, 14%) 100%);
+    background: var(--page-gradient);
   }
 }
 
