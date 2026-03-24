@@ -106,7 +106,7 @@ const VideoSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: quinticEase }}
-            className="flex justify-center order-1 lg:order-2"
+            className="flex justify-center order-1 lg:order-1"
           >
             <div className="relative group">
               {/* Glow behind video */}
