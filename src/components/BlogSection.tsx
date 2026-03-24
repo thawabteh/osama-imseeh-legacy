@@ -99,7 +99,7 @@ const BlogSection = () => {
                   </p>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-primary transition-all duration-300 group-hover:gap-4">
+                  <div className="flex items-center gap-2 text-primary transition-all duration-300 group-hover:gap-4 justify-end">
                     <span
                       className="text-lg"
                       style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
