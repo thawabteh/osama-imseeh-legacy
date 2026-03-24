@@ -88,7 +88,7 @@ const BlogSection = () => {
                   </h3>
 
                   {/* Decorative line */}
-                  <div className="w-12 h-px bg-primary/30 mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-primary/60" />
+                  <div className="w-12 h-px bg-primary/30 mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-primary/60 mr-0 ml-auto" />
 
                   {/* Excerpt */}
                   <p
