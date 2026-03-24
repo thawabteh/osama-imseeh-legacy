@@ -72,7 +72,7 @@ const VideoSection = () => {
               كلمات صادقة ولحظات عفوية تعكس شغف أسامة إمسيح بصناعة الأثر وإلهام من حوله.
             </motion.p>
 
-            <motion.div {...fadeInUp} transition={withDelay(0.3)} className="flex gap-16">
+            <motion.div {...fadeInUp} transition={withDelay(0.3)} className="flex gap-16 justify-end">
               {[
                 { value: "أثر", label: "يدوم" },
                 { value: "شغف", label: "لا ينطفئ" },
