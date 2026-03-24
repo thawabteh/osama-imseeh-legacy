@@ -111,8 +111,8 @@ const AboutSection = () => {
             transition={{ duration: 0.6, ease: quinticEase, delay: 0.3 }}
             className="mt-24 text-right max-w-xs"
           >
-            <p className="text-foreground font-bold text-2xl" style={{ fontFamily: "'Lateef', serif" }}>أسامة إمسيح</p>
-            <p className="text-primary text-lg mt-1" style={{ fontFamily: "'Lateef', serif" }}>اسم الكتاب</p>
+            <p className="text-foreground text-3xl md:text-4xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>أسامة إمسيح</p>
+            <p className="text-primary text-xl md:text-2xl mt-2" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>كاتب ورائد أعمال</p>
           </motion.div>
         </div>
       </section>
