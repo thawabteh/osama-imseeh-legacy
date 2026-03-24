@@ -66,7 +66,7 @@ const VideoSection = () => {
             <motion.p
               {...fadeInUp}
               transition={withDelay(0.2)}
-              className="text-foreground/70 text-xl md:text-2xl leading-[2] max-w-lg mb-12"
+              className="text-foreground/70 text-xl md:text-2xl leading-[2] max-w-lg mb-12 mr-0 ml-auto"
               style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
             >
               كلمات صادقة ولحظات عفوية تعكس شغف أسامة إمسيح بصناعة الأثر وإلهام من حوله.
