@@ -26,8 +26,8 @@ const ContactSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left side - info */}
-          <div>
-            <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4">
+          <div className="text-right order-2 lg:order-2">
+            <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-end">
               <Send className="w-5 h-5 text-primary" />
               <p
                 className="text-primary text-xl md:text-2xl"
