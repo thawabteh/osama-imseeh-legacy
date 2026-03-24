@@ -85,12 +85,12 @@ const ContactSection = () => {
             </motion.div>
           </div>
 
-          {/* Right side - form */}
+          {/* Left side - form */}
           <motion.form
             {...fadeInUp}
             transition={withDelay(0.2)}
             onSubmit={handleSubmit}
-            className="space-y-8"
+            className="space-y-8 text-right order-1 lg:order-1"
           >
             {[
               { name: "name" as const, label: "الاسم", type: "text" },
