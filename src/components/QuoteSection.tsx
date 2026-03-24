@@ -1,16 +1,10 @@
 import { motion } from "framer-motion";
 import { quinticEase } from "@/lib/animations";
-import textureDark from "@/assets/texture-dark.jpg";
 
 const QuoteSection = () => {
   return (
-    <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={textureDark} alt="" className="w-full h-full object-cover opacity-60" />
-        <div className="absolute inset-0 bg-background/70" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-32 teal-gradient-bg">
+      <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -18,13 +12,28 @@ const QuoteSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: quinticEase }}
           >
-            <div className="w-16 h-px gold-gradient mx-auto mb-12" />
-            <blockquote className="text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-10" style={{ fontFamily: "'Lateef', serif" }}>
-              "القيادة الحقيقية لا تُقاس بالسلطة التي تجمعها،
-              <span className="text-primary"> بل بالمستقبل الذي تصنعه.</span>"
+            {/* Top decorative line + quote mark */}
+            <div className="flex items-center justify-center gap-4 mb-12">
+              <div className="w-24 h-px bg-primary" />
+              <span className="text-primary text-5xl" style={{ fontFamily: "'Lateef', serif" }}>&#x201C;</span>
+              <div className="w-24 h-px bg-primary" />
+            </div>
+
+            <blockquote
+              className="text-3xl md:text-4xl lg:text-5xl text-foreground leading-[1.8] mb-12"
+              style={{ fontFamily: "'Lateef', serif" }}
+            >
+              القيادة الحقيقية لا تُقاس بالسلطة التي تجمعها،
+              <br />
+              بل بالمستقبل الذي تصنعه
             </blockquote>
-            <p className="label-caps text-primary text-2xl">أسامة إمسيح</p>
-            <div className="w-16 h-px gold-gradient mx-auto mt-12" />
+
+            {/* Bottom decorative line + quote mark */}
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-24 h-px bg-primary" />
+              <span className="text-primary text-5xl" style={{ fontFamily: "'Lateef', serif" }}>&#x201D;</span>
+              <div className="w-24 h-px bg-primary" />
+            </div>
           </motion.div>
         </div>
       </div>

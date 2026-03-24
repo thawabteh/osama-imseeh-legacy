@@ -15,10 +15,9 @@ const VideoSection = () => {
   };
 
   return (
-    <section id="video" className="py-32 bg-secondary/30 overflow-hidden">
+    <section id="video" className="py-32 bg-card overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* النص */}
           <div>
             <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
               أسامة إمسيح
@@ -42,7 +41,6 @@ const VideoSection = () => {
             </motion.div>
           </div>
 
-          {/* الفيديو ريل */}
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -52,7 +50,7 @@ const VideoSection = () => {
           >
             <div
               className="relative w-[300px] md:w-[360px] aspect-[9/16] overflow-hidden rounded-2xl"
-              style={{ boxShadow: "var(--shadow-gold)" }}
+              style={{ boxShadow: "var(--shadow-teal)" }}
             >
               <video
                 ref={videoRef}
@@ -65,15 +63,13 @@ const VideoSection = () => {
               >
                 <source src="/videos/imseeh-video.mp4" type="video/mp4" />
               </video>
-              {/* زر الصوت */}
               <button
                 onClick={toggleMute}
-                className="absolute bottom-4 left-4 z-10 bg-background/70 backdrop-blur-sm border border-primary/30 rounded-full p-2.5 text-primary transition-colors hover:bg-background/90"
+                className="absolute bottom-4 left-4 z-10 bg-background/70 backdrop-blur-sm border border-foreground/20 rounded-full p-2.5 text-primary transition-colors hover:bg-background/90"
                 aria-label={isMuted ? "تشغيل الصوت" : "كتم الصوت"}
               >
                 {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
               </button>
-              <div className="absolute bottom-0 right-0 w-full h-px gold-gradient" />
             </div>
           </motion.div>
         </div>
