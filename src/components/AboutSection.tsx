@@ -130,20 +130,21 @@ const AboutSection = () => {
                 transition={{ duration: 0.6, ease: quinticEase, delay: 0.15 * i }}
                 className="flex items-center gap-4 md:gap-6"
               >
-                <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] flex items-center justify-center">
+                <div className="relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full border border-foreground/10" />
-                  <div className="absolute inset-4 md:inset-6 rounded-full bg-foreground/5 border border-foreground/10" />
-                  <div className="relative z-10 text-center px-8">
-                    <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3">{card.title}</h3>
-                    <p className="text-foreground/60 text-lg md:text-xl leading-relaxed">{card.desc}</p>
+                  <div className="absolute inset-3 md:inset-4 rounded-full border border-foreground/8" />
+                  <div className="absolute inset-6 md:inset-8 rounded-full bg-gradient-to-br from-foreground/8 to-foreground/3" />
+                  <div className="relative z-10 text-center px-10">
+                    <h3 className="text-2xl md:text-3xl text-foreground mb-3" style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}>{card.title}</h3>
+                    <p className="text-foreground/60 text-lg md:text-xl leading-relaxed" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>{card.desc}</p>
                   </div>
                 </div>
 
                 {i < cards.length - 1 && (
-                  <div className="hidden md:flex items-center gap-1">
-                    <div className="w-1 h-1 rounded-full bg-foreground/30" />
-                    <div className="w-1 h-1 rounded-full bg-foreground/30" />
-                    <div className="w-3 h-3 rounded-full bg-primary" />
+                  <div className="hidden md:flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-foreground/30" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-foreground/30" />
+                    <div className="w-5 h-5 rounded-full bg-primary" />
                   </div>
                 )}
               </motion.div>
