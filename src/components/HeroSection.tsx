@@ -24,7 +24,7 @@ const HeroSection = () => {
               {...fadeInUp}
               transition={withDelay(0.2)}
               className="text-foreground mb-6"
-              style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 800 }}
+              style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 400 }}
             >
               <span className="text-primary text-5xl md:text-7xl block leading-tight">إرثٌ من التميز</span>
               <span className="text-foreground text-4xl md:text-6xl block leading-tight">ورؤية للمستقبل</span>
