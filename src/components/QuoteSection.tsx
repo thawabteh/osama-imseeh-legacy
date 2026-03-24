@@ -3,7 +3,7 @@ import { quinticEase } from "@/lib/animations";
 
 const QuoteSection = () => {
   return (
-    <section className="py-32 teal-gradient-bg">
+    <section className="py-32">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div

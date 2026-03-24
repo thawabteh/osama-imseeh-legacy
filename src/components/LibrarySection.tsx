@@ -11,7 +11,7 @@ const books = [
 
 const LibrarySection = () => {
   return (
-    <section id="library" className="py-32 teal-gradient-bg">
+    <section id="library" className="py-32">
       <div className="container mx-auto px-6">
         <motion.h2
           {...fadeInUp}
