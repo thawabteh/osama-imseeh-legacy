@@ -6,23 +6,24 @@ import heroOverlay from "@/assets/hero-overlay.png";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image */}
+      {/* Background image - full bleed */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-left-top"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-background/95 via-background/70 to-transparent" />
+        {/* Subtle dark overlay for text readability on right */}
+        <div className="absolute inset-0 bg-gradient-to-l from-background/80 via-background/40 to-transparent" />
       </div>
 
-      {/* Transparent overlay image of Osama */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-[60%] z-[5] pointer-events-none">
+      {/* Transparent cutout of Osama layered on top */}
+      <div className="absolute inset-0 z-[5] pointer-events-none">
         <img
           src={heroOverlay}
           alt="أسامة إمسيح"
-          className="h-[95vh] w-auto object-contain"
+          className="absolute bottom-0 left-0 h-full w-auto max-w-[65%] object-contain object-left-bottom"
           loading="eager"
         />
       </div>
