@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
-import aboutPortrait1 from "@/assets/about-portrait-1.jpg";
+import aboutBg from "@/assets/about-bg.png";
 
 const cards = [
   { title: "الاستثمار الاستراتيجي", desc: "اكتشاف ورعاية الفرص التحويلية عبر قطاعات متنوعة." },
@@ -11,32 +11,51 @@ const cards = [
 const AboutSection = () => {
   return (
     <>
-      {/* About hero - full width image with text overlay */}
-      <section id="about" className="relative min-h-[70vh] flex items-center overflow-hidden">
+      {/* About hero - full width background with text overlay */}
+      <section id="about" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={aboutPortrait1}
+            src={aboutBg}
             alt="أسامة إمسيح"
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/50 to-transparent" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex justify-end">
-            <div className="max-w-lg text-right">
-              <motion.p {...fadeInUp} className="label-caps text-foreground/70 mb-4 text-2xl">
+            <div className="max-w-xl text-right">
+              <motion.p
+                {...fadeInUp}
+                className="text-foreground/70 mb-4 text-2xl md:text-3xl"
+                style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
+              >
                 سيرة ومسيرة
               </motion.p>
               <motion.h2
                 {...fadeInUp}
-                transition={withDelay(0.1)}
-                className="text-foreground leading-tight"
-                style={{ fontFamily: "'Lateef', serif", fontWeight: 700 }}
+                transition={withDelay(0.15)}
+                className="leading-tight mb-8"
+                style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
               >
-                <span className="text-primary text-6xl md:text-8xl block">عن أسامة</span>
+                <span className="text-primary text-7xl md:text-9xl block">عن أسامة</span>
               </motion.h2>
+
+              {/* Scroll indicator */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.6, ease: quinticEase }}
+                className="mt-16 flex flex-col items-end gap-2"
+              >
+                <span className="text-foreground/50 text-base" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
+                  scrolling motion
+                </span>
+                <span className="text-foreground/50 text-base" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
+                  tap on osama to new page
+                </span>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -53,7 +72,6 @@ const AboutSection = () => {
               transition={{ duration: 0.6, ease: quinticEase }}
               className="relative"
             >
-              {/* Large quote marks */}
               <span className="absolute -top-8 -right-4 text-primary/30 text-[8rem] leading-none" style={{ fontFamily: "'Lateef', serif" }}>
                 &#x201D;
               </span>
@@ -90,20 +108,15 @@ const AboutSection = () => {
                 transition={{ duration: 0.6, ease: quinticEase, delay: 0.15 * i }}
                 className="flex items-center gap-4 md:gap-6"
               >
-                {/* Concentric circles card */}
                 <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] flex items-center justify-center">
-                  {/* Outer ring */}
                   <div className="absolute inset-0 rounded-full border border-foreground/10" />
-                  {/* Inner circle */}
                   <div className="absolute inset-4 md:inset-6 rounded-full bg-foreground/5 border border-foreground/10" />
-                  {/* Content */}
                   <div className="relative z-10 text-center px-8">
                     <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3">{card.title}</h3>
                     <p className="text-foreground/60 text-lg md:text-xl leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
 
-                {/* Orange connector dot (not on last item) */}
                 {i < cards.length - 1 && (
                   <div className="hidden md:flex items-center gap-1">
                     <div className="w-1 h-1 rounded-full bg-foreground/30" />
