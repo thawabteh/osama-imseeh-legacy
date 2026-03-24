@@ -118,7 +118,7 @@ const AboutSection = () => {
       </section>
 
       {/* Circular cards section */}
-      <section className="py-28 overflow-hidden">
+      <section className="py-28 teal-gradient-bg overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
             {cards.map((card, i) => (
