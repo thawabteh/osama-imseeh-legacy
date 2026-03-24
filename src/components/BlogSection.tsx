@@ -25,8 +25,8 @@ const BlogSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="mb-20">
-          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4">
+        <div className="mb-20 text-right">
+          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-end">
             <Sparkles className="w-5 h-5 text-primary" />
             <p
               className="text-primary text-xl md:text-2xl"
