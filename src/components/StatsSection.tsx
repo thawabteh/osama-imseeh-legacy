@@ -1,11 +1,36 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { quinticEase } from "@/lib/animations";
+import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { value: "12", label: "قطاعاً" },
-  { value: "+30", label: "عاماً من الخبرة" },
-  { value: "1", label: "إرث" },
+  { value: 12, prefix: "", label: "قطاعاً" },
+  { value: 30, prefix: "+", label: "عاماً من الخبرة" },
+  { value: 1, prefix: "", label: "إرث" },
 ];
+
+const CountUp = ({ target, prefix, duration = 2 }: { target: number; prefix: string; duration?: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let start = 0;
+    const startTime = performance.now();
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / (duration * 1000), 1);
+      // easeOutExpo
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.round(eased * target);
+      setCount(current);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [isInView, target, duration]);
+
+  return <span ref={ref}>{prefix}{count}</span>;
+};
 
 const StatsSection = () => {
   return (
@@ -27,7 +52,7 @@ const StatsSection = () => {
                 }`}
                 style={{ fontFamily: "'Lateef', serif", fontWeight: 700 }}
               >
-                {stat.value}
+                <CountUp target={stat.value} prefix={stat.prefix} duration={i === 1 ? 2.5 : 1.5} />
               </p>
               <p
                 className="label-caps text-foreground/50 group-hover:text-foreground/80 transition-all duration-500 mt-2 text-xl md:text-2xl"
