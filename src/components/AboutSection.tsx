@@ -94,7 +94,7 @@ const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: quinticEase }}
             >
-              <p className="text-foreground/90 text-2xl md:text-3xl lg:text-4xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif", lineHeight: "3.4" }}>
+              <p className="text-foreground/90 text-2xl md:text-3xl lg:text-4xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif", lineHeight: "2.8" }}>
                 النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان،
                 انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي
                 لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام،
