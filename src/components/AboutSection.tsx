@@ -1,70 +1,122 @@
 import { motion } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import aboutPortrait1 from "@/assets/about-portrait-1.jpg";
-import aboutPortrait2 from "@/assets/about-portrait-2.jpg";
+
+const cards = [
+  { title: "الاستثمار الاستراتيجي", desc: "اكتشاف ورعاية الفرص التحويلية عبر قطاعات متنوعة." },
+  { title: "الخدمة العامة", desc: "المساهمة في صياغة سياسات تعزز الأساس الاقتصادي للأردن." },
+  { title: "التوجيه والإرشاد", desc: "تنمية الجيل القادم من القادة من خلال التوجيه المباشر والدعم." },
+];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-32 bg-background overflow-hidden">
-      <div className="absolute left-1/2 top-0 bottom-0 gold-thread opacity-30 hidden lg:block" />
-
-      <div className="container mx-auto px-6">
-        <motion.p {...fadeInUp} className="label-caps text-primary mb-4">
-          سيرة ومسيرة
-        </motion.p>
-        <motion.h2 {...fadeInUp} transition={withDelay(0.1)} className="section-heading text-foreground max-w-3xl">
-          عن <span className="text-primary">أسامة</span>
-        </motion.h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16 items-start">
-          <motion.div {...fadeInUp} transition={withDelay(0.2)} className="space-y-8">
-            <div className="overflow-hidden rounded-[1.75rem]" style={{ boxShadow: "var(--shadow-gold)" }}>
-              <img
-                src={aboutPortrait1}
-                alt="أسامة إمسيح خلال حديث ملهم"
-                className="w-full h-[420px] object-cover"
-                loading="lazy"
-              />
-            </div>
-
-            <p className="text-muted-foreground text-2xl md:text-3xl leading-[2]">
-              "النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان،
-              انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي
-              لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام،
-              ورؤى استشرف بها المستقبل."
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 1.02 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: quinticEase }}
-            className="space-y-8"
-          >
-            <div className="overflow-hidden rounded-[1.75rem]" style={{ boxShadow: "var(--shadow-gold)" }}>
-              <img
-                src={aboutPortrait2}
-                alt="أسامة إمسيح في جلسة نقاش"
-                className="w-full h-[300px] object-cover"
-                loading="lazy"
-              />
-            </div>
-
-            {[
-              { title: "الاستثمار الاستراتيجي", desc: "اكتشاف ورعاية الفرص التحويلية عبر قطاعات متنوعة." },
-              { title: "الخدمة العامة", desc: "المساهمة في صياغة سياسات تعزز الأساس الاقتصادي للأردن." },
-              { title: "التوجيه والإرشاد", desc: "تنمية الجيل القادم من القادة من خلال التوجيه المباشر والدعم." },
-            ].map((item) => (
-              <div key={item.title} className="card-surface p-8 rounded-2xl">
-                <h3 className="font-serif text-4xl text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground text-2xl leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </motion.div>
+    <>
+      {/* About hero - full width image with text overlay */}
+      <section id="about" className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={aboutPortrait1}
+            alt="أسامة إمسيح"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/50 to-transparent" />
         </div>
-      </div>
-    </section>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex justify-end">
+            <div className="max-w-lg text-right">
+              <motion.p {...fadeInUp} className="label-caps text-foreground/70 mb-4 text-2xl">
+                سيرة ومسيرة
+              </motion.p>
+              <motion.h2
+                {...fadeInUp}
+                transition={withDelay(0.1)}
+                className="text-foreground leading-tight"
+                style={{ fontFamily: "'Lateef', serif", fontWeight: 700 }}
+              >
+                <span className="text-primary text-6xl md:text-8xl block">عن أسامة</span>
+              </motion.h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote / bio text */}
+      <section className="py-24 teal-gradient-bg">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-right">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: quinticEase }}
+              className="relative"
+            >
+              {/* Large quote marks */}
+              <span className="absolute -top-8 -right-4 text-primary/30 text-[8rem] leading-none" style={{ fontFamily: "'Lateef', serif" }}>
+                &#x201D;
+              </span>
+              <span className="absolute -bottom-16 left-0 text-primary/30 text-[8rem] leading-none" style={{ fontFamily: "'Lateef', serif" }}>
+                &#x201C;
+              </span>
+
+              <p className="text-foreground/90 text-2xl md:text-3xl leading-[2.2] relative z-10 pr-12">
+                النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان،
+                انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي
+                لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام،
+                ورؤى استشرف بها المستقبل.
+              </p>
+
+              <div className="mt-16">
+                <p className="text-foreground font-bold text-3xl" style={{ fontFamily: "'Lateef', serif" }}>أسامة إمسيح</p>
+                <p className="text-foreground/60 text-xl" style={{ fontFamily: "'Lateef', serif" }}>اسم الكتاب</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Circular cards section */}
+      <section className="py-28 teal-gradient-bg overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
+            {cards.map((card, i) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: quinticEase, delay: 0.15 * i }}
+                className="flex items-center gap-4 md:gap-6"
+              >
+                {/* Concentric circles card */}
+                <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] flex items-center justify-center">
+                  {/* Outer ring */}
+                  <div className="absolute inset-0 rounded-full border border-foreground/10" />
+                  {/* Inner circle */}
+                  <div className="absolute inset-4 md:inset-6 rounded-full bg-foreground/5 border border-foreground/10" />
+                  {/* Content */}
+                  <div className="relative z-10 text-center px-8">
+                    <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3">{card.title}</h3>
+                    <p className="text-foreground/60 text-lg md:text-xl leading-relaxed">{card.desc}</p>
+                  </div>
+                </div>
+
+                {/* Orange connector dot (not on last item) */}
+                {i < cards.length - 1 && (
+                  <div className="hidden md:flex items-center gap-1">
+                    <div className="w-1 h-1 rounded-full bg-foreground/30" />
+                    <div className="w-1 h-1 rounded-full bg-foreground/30" />
+                    <div className="w-3 h-3 rounded-full bg-primary" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

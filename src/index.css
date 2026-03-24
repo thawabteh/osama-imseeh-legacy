@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 6%;
+    --background: 197 55% 14%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 10%;
+    --card: 197 45% 18%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 10%;
+    --popover: 197 45% 18%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 40 48% 56%;
-    --primary-foreground: 0 0% 6%;
+    --primary: 25 80% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 33% 18%;
+    --secondary: 197 40% 20%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 197 35% 22%;
+    --muted-foreground: 195 15% 65%;
 
-    --accent: 24 33% 18%;
+    --accent: 197 40% 20%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 40 48% 56% / 0.15;
-    --input: 0 0% 14%;
-    --ring: 40 48% 56%;
+    --border: 195 30% 30%;
+    --input: 197 35% 22%;
+    --ring: 25 80% 55%;
 
     --radius: 0px;
 
-    --surface: 0 0% 10%;
+    --surface: 197 50% 16%;
 
-    --sidebar-background: 0 0% 8%;
+    --sidebar-background: 197 55% 12%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 40 48% 56%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 0 0% 14%;
+    --sidebar-primary: 25 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 197 35% 22%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 40 48% 56% / 0.15;
-    --sidebar-ring: 40 48% 56%;
+    --sidebar-border: 195 30% 30%;
+    --sidebar-ring: 25 80% 55%;
 
-    --gold-gradient: linear-gradient(135deg, hsl(40, 48%, 50%), hsl(45, 60%, 55%), hsl(40, 48%, 50%));
-    --shadow-gold: 0 0 0 1px hsla(40, 48%, 56%, 0.1);
-    --shadow-lift: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    --teal-gradient: linear-gradient(135deg, hsl(197, 55%, 12%), hsl(195, 45%, 20%), hsl(197, 55%, 14%));
+    --shadow-teal: 0 0 0 1px hsla(195, 30%, 30%, 0.3);
+    --shadow-lift: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
     --nav-blur: blur(12px);
   }
 }
@@ -79,10 +79,10 @@
   .nav-link {
     @apply text-2xl font-bold transition-colors duration-300;
     font-family: 'Lateef', serif;
-    color: hsla(0, 0%, 100%, 0.6);
+    color: hsla(0, 0%, 100%, 0.7);
   }
   .nav-link:hover {
-    color: hsl(40, 48%, 56%);
+    color: hsl(25, 80%, 55%);
   }
 
   .section-heading {
@@ -103,11 +103,11 @@
   }
 
   .gold-gradient {
-    background: linear-gradient(135deg, #C5A059, #D4AF37, #C5A059);
+    background: linear-gradient(135deg, hsl(25, 80%, 50%), hsl(25, 85%, 55%), hsl(25, 80%, 50%));
   }
 
   .gold-text {
-    background: linear-gradient(135deg, #C5A059, #D4AF37, #C5A059);
+    background: linear-gradient(135deg, hsl(25, 80%, 50%), hsl(25, 85%, 55%), hsl(25, 80%, 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -115,12 +115,12 @@
 
   .gold-thread {
     width: 1px;
-    background: linear-gradient(180deg, transparent, hsl(40, 48%, 56%), transparent);
+    background: linear-gradient(180deg, transparent, hsl(25, 80%, 55%), transparent);
   }
 
   .card-surface {
-    background: hsl(0, 0%, 10%);
-    box-shadow: 0 0 0 1px hsla(40, 48%, 56%, 0.1);
+    background: hsl(197, 45%, 18%);
+    box-shadow: 0 0 0 1px hsla(195, 30%, 30%, 0.3);
   }
 
   .link-underline {
@@ -129,11 +129,15 @@
   .link-underline::after {
     content: '';
     @apply absolute bottom-0 right-1/2 h-[1px] w-0 transition-all duration-300;
-    background: hsl(40, 48%, 56%);
+    background: hsl(25, 80%, 55%);
     transform: translateX(50%);
   }
   .link-underline:hover::after {
     @apply w-full;
+  }
+
+  .teal-gradient-bg {
+    background: linear-gradient(160deg, hsl(197, 55%, 10%) 0%, hsl(195, 45%, 18%) 50%, hsl(197, 50%, 14%) 100%);
   }
 }
 
@@ -145,8 +149,8 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(0, 0%, 6%);
+  background: hsl(197, 55%, 10%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsla(40, 48%, 56%, 0.3);
+  background: hsla(25, 80%, 55%, 0.3);
 }

@@ -26,7 +26,7 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-32 bg-background">
+    <section id="gallery" className="py-32 teal-gradient-bg">
       <div className="container mx-auto px-6">
         <motion.p {...fadeInUp} className="label-caps text-primary mb-4 text-3xl">
           محطات بارزة
@@ -44,7 +44,7 @@ const GallerySection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: quinticEase, delay: 0.08 * (i % 5) }}
               className={`overflow-hidden rounded-[1rem] ${img.span}`}
-              style={{ boxShadow: "var(--shadow-gold)" }}
+              style={{ boxShadow: "var(--shadow-teal)" }}
             >
               <img
                 src={img.src}

@@ -4,60 +4,43 @@ import heroPortrait from "@/assets/portrait-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center min-h-screen py-24">
-          {/* الصورة */}
-          <motion.div
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: quinticEase }}
-            className="relative order-2 lg:order-2 flex justify-center"
-          >
-            <div
-              className="relative w-[320px] md:w-[420px] lg:w-full max-w-[520px] aspect-[4/5] overflow-hidden rounded-[2rem]"
-              style={{ boxShadow: "var(--shadow-gold)" }}
-            >
-              <img
-                src={heroPortrait}
-                alt="صورة أسامة إمسيح"
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/25 to-transparent" />
-              <div className="absolute bottom-0 right-0 w-full h-px gold-gradient" />
-            </div>
-          </motion.div>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Full-width background image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroPortrait}
+          alt="أسامة إمسيح"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-background/95 via-background/70 to-transparent" />
+      </div>
 
-          {/* النص */}
-          <div className="order-1 lg:order-1 flex flex-col justify-center">
-            <motion.p {...fadeInUp} transition={withDelay(0.2)} className="label-caps text-primary mb-6">
-              قيادة · رؤية · إرث
-            </motion.p>
-            <motion.h1 {...fadeInUp} transition={withDelay(0.4)} className="section-heading text-foreground">
-              أسامة إمسيح: إرثٌ من التميز
-              <br />
-              <span className="text-primary">ورؤية للمستقبل</span>
+      {/* Content overlay - right side */}
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex justify-end">
+          <div className="max-w-xl text-right py-24">
+            <motion.h1
+              {...fadeInUp}
+              transition={withDelay(0.2)}
+              className="text-foreground mb-6"
+              style={{ fontFamily: "'Lateef', serif", fontWeight: 700 }}
+            >
+              <span className="text-primary text-6xl md:text-8xl block leading-tight">إرثٌ من التميز</span>
+              <span className="text-foreground text-5xl md:text-7xl block leading-tight">ورؤية للمستقبل</span>
             </motion.h1>
-            <motion.p {...fadeInUp} transition={withDelay(0.6)} className="text-muted-foreground text-2xl md:text-3xl max-w-lg mb-10 leading-relaxed">
+            <motion.p
+              {...fadeInUp}
+              transition={withDelay(0.4)}
+              className="text-muted-foreground text-2xl md:text-3xl max-w-lg mr-auto leading-relaxed"
+            >
               محطات في القيادة، موروث الأصالة، ورؤى تجمع بين عراقة الماضي وطموح الغد.
             </motion.p>
-            <motion.div {...fadeInUp} transition={withDelay(0.8)} className="flex gap-12">
-              {[
-                { value: "+30", label: "عاماً" },
-                { value: "12", label: "قطاعاً" },
-                { value: "1", label: "إرث" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="font-serif text-5xl md:text-6xl text-primary">{stat.value}</p>
-                  <p className="label-caps text-muted-foreground mt-1 text-xl">{stat.label}</p>
-                </div>
-              ))}
-            </motion.div>
           </div>
         </div>
       </div>
 
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
