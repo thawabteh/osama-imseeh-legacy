@@ -18,11 +18,11 @@ const HeroSection = () => {
       </div>
 
       {/* Transparent overlay image of Osama */}
-      <div className="absolute bottom-0 left-0 z-[5] pointer-events-none">
+      <div className="absolute bottom-0 left-1/2 -translate-x-[60%] z-[5] pointer-events-none">
         <img
           src={heroOverlay}
           alt="أسامة إمسيح"
-          className="h-[85vh] w-auto object-contain"
+          className="h-[95vh] w-auto object-contain"
           loading="eager"
         />
       </div>
