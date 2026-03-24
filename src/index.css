@@ -69,8 +69,8 @@
     --sidebar-border: 195 30% 30%;
     --sidebar-ring: 25 80% 55%;
 
-    --teal-gradient: linear-gradient(135deg, hsl(197, 55%, 12%), hsl(195, 45%, 20%), hsl(197, 55%, 14%));
-    --page-gradient: linear-gradient(160deg, hsl(197, 55%, 10%) 0%, hsl(195, 45%, 18%) 50%, hsl(197, 50%, 14%) 100%);
+    --teal-gradient: linear-gradient(180deg, hsl(197, 55%, 8%), hsl(195, 50%, 22%), hsl(197, 55%, 12%));
+    --page-gradient: linear-gradient(180deg, hsl(197, 55%, 8%) 0%, hsl(195, 50%, 22%) 50%, hsl(197, 55%, 12%) 100%);
     --shadow-teal: 0 0 0 1px hsla(195, 30%, 30%, 0.3);
     --shadow-lift: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
     --nav-blur: blur(12px);
@@ -90,8 +90,7 @@
 
   body {
     @apply text-foreground;
-    background: var(--page-gradient);
-    background-attachment: fixed;
+    background: hsl(197, 55%, 10%);
     font-family: 'Lateef', serif;
     font-weight: 400;
     line-height: 1.9;
