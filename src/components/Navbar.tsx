@@ -30,14 +30,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6" dir="rtl">
-        <a href="#" className="text-foreground text-4xl md:text-5xl font-bold" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
+        <a href="#" className="text-foreground text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
           أسامة إمسيح
         </a>
 
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item, i) => (
             <div key={item.label} className="flex items-center gap-6">
-              <a href={item.href} className="nav-link link-underline text-2xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
+              <a href={item.href} className="nav-link link-underline text-base" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>
                 {item.label}
               </a>
               {i < navItems.length - 1 && (

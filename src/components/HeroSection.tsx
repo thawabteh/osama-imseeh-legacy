@@ -26,13 +26,13 @@ const HeroSection = () => {
               className="text-foreground mb-6"
               style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 800 }}
             >
-              <span className="text-primary text-7xl md:text-9xl block leading-tight">إرثٌ من التميز</span>
-              <span className="text-foreground text-6xl md:text-8xl block leading-tight">ورؤية للمستقبل</span>
+              <span className="text-primary text-5xl md:text-7xl block leading-tight">إرثٌ من التميز</span>
+              <span className="text-foreground text-4xl md:text-6xl block leading-tight">ورؤية للمستقبل</span>
             </motion.h1>
             <motion.p
               {...fadeInUp}
               transition={withDelay(0.4)}
-              className="text-muted-foreground text-2xl md:text-4xl max-w-lg mr-auto leading-relaxed"
+              className="text-muted-foreground text-lg md:text-2xl max-w-lg mr-auto leading-relaxed"
               style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
             >
               محطات في القيادة، موروث الأصالة، ورؤى تجمع بين عراقة الماضي وطموح الغد.
