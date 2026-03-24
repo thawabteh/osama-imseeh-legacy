@@ -60,7 +60,7 @@ const VideoSection = () => {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: quinticEase, delay: 0.2 }}
-              className="w-20 h-px bg-primary/40 mb-8 origin-right"
+              className="w-20 h-px bg-primary/40 mb-8 origin-right mr-0 ml-auto"
             />
 
             <motion.p
