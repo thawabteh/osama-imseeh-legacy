@@ -26,8 +26,8 @@ const ContactSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left side - info */}
-          <div>
-            <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4">
+          <div className="text-right order-2 lg:order-2">
+            <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-end">
               <Send className="w-5 h-5 text-primary" />
               <p
                 className="text-primary text-xl md:text-2xl"
@@ -52,7 +52,7 @@ const ContactSection = () => {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: quinticEase, delay: 0.2 }}
-              className="w-20 h-px bg-primary/40 mt-6 mb-8 origin-right"
+              className="w-20 h-px bg-primary/40 mt-6 mb-8 origin-right mr-0 ml-auto"
             />
 
             <motion.p
@@ -74,7 +74,7 @@ const ContactSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, ease: quinticEase, delay: 0.4 + 0.1 * i }}
-                  className="group flex items-center gap-3 w-fit py-2 text-foreground/70 transition-colors duration-300 hover:text-primary"
+                  className="group flex items-center gap-3 w-fit py-2 text-foreground/70 transition-colors duration-300 hover:text-primary mr-0 ml-auto flex-row-reverse"
                   style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
                 >
                   <ExternalLink className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -85,12 +85,12 @@ const ContactSection = () => {
             </motion.div>
           </div>
 
-          {/* Right side - form */}
+          {/* Left side - form */}
           <motion.form
             {...fadeInUp}
             transition={withDelay(0.2)}
             onSubmit={handleSubmit}
-            className="space-y-8"
+            className="space-y-8 text-right order-1 lg:order-1"
           >
             {[
               { name: "name" as const, label: "الاسم", type: "text" },
