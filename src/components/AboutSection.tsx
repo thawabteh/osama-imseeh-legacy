@@ -61,36 +61,59 @@ const AboutSection = () => {
       </section>
 
       {/* Quote / bio text */}
-      <section className="py-24 teal-gradient-bg">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-right">
+      <section className="relative py-32 teal-gradient-bg overflow-hidden">
+        {/* Large decorative quotes - top right */}
+        <motion.span
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: quinticEase }}
+          className="absolute top-6 right-8 text-primary/40 text-[12rem] md:text-[16rem] leading-none select-none pointer-events-none"
+          style={{ fontFamily: "'Lateef', serif" }}
+        >
+          &#x201D;
+        </motion.span>
+
+        {/* Large decorative quotes - bottom center-left */}
+        <motion.span
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: quinticEase, delay: 0.2 }}
+          className="absolute bottom-16 left-[30%] text-primary/25 text-[10rem] md:text-[14rem] leading-none select-none pointer-events-none"
+          style={{ fontFamily: "'Lateef', serif" }}
+        >
+          &#x201C;
+        </motion.span>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl mr-0 ml-auto text-right">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: quinticEase }}
-              className="relative"
             >
-              <span className="absolute -top-8 -right-4 text-primary/30 text-[8rem] leading-none" style={{ fontFamily: "'Lateef', serif" }}>
-                &#x201D;
-              </span>
-              <span className="absolute -bottom-16 left-0 text-primary/30 text-[8rem] leading-none" style={{ fontFamily: "'Lateef', serif" }}>
-                &#x201C;
-              </span>
-
-              <p className="text-foreground/90 text-2xl md:text-3xl leading-[2.2] relative z-10 pr-12">
+              <p className="text-foreground/90 text-2xl md:text-3xl leading-[2.2]">
                 النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان،
                 انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي
                 لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام،
-                ورؤى استشرف بها المستقبل.
+                ورؤى استشرف بها المستقبل
               </p>
-
-              <div className="mt-16">
-                <p className="text-foreground font-bold text-3xl" style={{ fontFamily: "'Lateef', serif" }}>أسامة إمسيح</p>
-                <p className="text-foreground/60 text-xl" style={{ fontFamily: "'Lateef', serif" }}>اسم الكتاب</p>
-              </div>
             </motion.div>
           </div>
+
+          {/* Author info - bottom left */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: quinticEase, delay: 0.3 }}
+            className="mt-24 text-right max-w-xs"
+          >
+            <p className="text-foreground font-bold text-2xl" style={{ fontFamily: "'Lateef', serif" }}>أسامة إمسيح</p>
+            <p className="text-primary text-lg mt-1" style={{ fontFamily: "'Lateef', serif" }}>اسم الكتاب</p>
+          </motion.div>
         </div>
       </section>
 
