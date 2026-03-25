@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import aboutBg from "@/assets/about-bg.png";
+import aboutPortrait from "@/assets/about-portrait.png";
 
 const cards = [
   { title: "الاستثمار الاستراتيجي", desc: "اكتشاف ورعاية الفرص التحويلية عبر قطاعات متنوعة." },
@@ -87,33 +88,56 @@ const AboutSection = () => {
         </motion.span>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mr-0 ml-auto text-right">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-center">
+            {/* Portrait image - left side */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: quinticEase }}
+              transition={{ duration: 0.7, ease: quinticEase }}
+              className="order-2 lg:order-1"
             >
-              <p className="text-foreground/90 text-2xl md:text-3xl lg:text-4xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif", lineHeight: "2.2" }}>
-                النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان،
-                انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي
-                لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام،
-                ورؤى استشرف بها المستقبل
-              </p>
-            </motion.div>
-          </div>
+              <div className="relative max-w-sm mx-auto lg:mx-0">
+                <img
+                  src={aboutPortrait}
+                  alt="أسامة إمسيح"
+                  className="w-full rounded-2xl object-cover"
+                  loading="lazy"
+                />
+                {/* Decorative border */}
+                <div className="absolute -inset-3 rounded-2xl border border-primary/20 -z-10" />
+              </div>
 
-          {/* Author info - bottom left */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: quinticEase, delay: 0.3 }}
-            className="mt-24 text-right max-w-xs"
-          >
-            <p className="text-foreground text-3xl md:text-4xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>أسامة إمسيح</p>
-            <p className="text-primary text-xl md:text-2xl mt-2" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>كاتب ورائد أعمال</p>
-          </motion.div>
+              {/* Author info - below image */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: quinticEase, delay: 0.3 }}
+                className="mt-8 text-center lg:text-right max-w-sm mx-auto lg:mx-0"
+              >
+                <p className="text-foreground text-3xl md:text-4xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>أسامة إمسيح</p>
+                <p className="text-primary text-xl md:text-2xl mt-2" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>كاتب ورائد أعمال</p>
+              </motion.div>
+            </motion.div>
+
+            {/* Quote text - right side */}
+            <div className="max-w-3xl text-right order-1 lg:order-2">
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: quinticEase }}
+              >
+                <p className="text-foreground/90 text-2xl md:text-3xl lg:text-4xl" style={{ fontFamily: "'Montserrat Arabic', sans-serif", lineHeight: "2.2" }}>
+                  النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان،
+                  انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي
+                  لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام،
+                  ورؤى استشرف بها المستقبل
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
