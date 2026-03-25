@@ -154,15 +154,19 @@ const AboutSection = () => {
                 transition={{ duration: 0.6, ease: quinticEase, delay: 0.15 * i }}
                 className="flex items-center gap-4 md:gap-6"
               >
-                <div className="relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full border border-foreground/10" />
-                  <div className="absolute inset-3 md:inset-4 rounded-full border border-foreground/8" />
-                  <div className="absolute inset-6 md:inset-8 rounded-full bg-gradient-to-br from-foreground/8 to-foreground/3" />
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] flex items-center justify-center cursor-pointer group/circle"
+                >
+                  <div className="absolute inset-0 rounded-full border border-foreground/10 transition-colors duration-500 group-hover/circle:border-primary/30" />
+                  <div className="absolute inset-3 md:inset-4 rounded-full border border-foreground/8 transition-colors duration-500 group-hover/circle:border-primary/20" />
+                  <div className="absolute inset-6 md:inset-8 rounded-full bg-gradient-to-br from-foreground/8 to-foreground/3 transition-all duration-500 group-hover/circle:from-primary/15 group-hover/circle:to-primary/5" />
                   <div className="relative z-10 text-center px-10">
-                    <h3 className="text-2xl md:text-3xl text-foreground mb-3" style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}>{card.title}</h3>
-                    <p className="text-foreground/60 text-lg md:text-xl leading-relaxed" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>{card.desc}</p>
+                    <h3 className="text-2xl md:text-3xl text-foreground mb-3 transition-colors duration-300 group-hover/circle:text-primary" style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}>{card.title}</h3>
+                    <p className="text-foreground/60 text-lg md:text-xl leading-relaxed transition-colors duration-300 group-hover/circle:text-foreground/80" style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}>{card.desc}</p>
                   </div>
-                </div>
+                </motion.div>
 
                 {i < cards.length - 1 && (
                   <div className="hidden md:flex items-center gap-1.5">
