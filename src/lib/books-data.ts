@@ -1,26 +1,65 @@
 import bookCover1 from "@/assets/book-cover-1.png";
 import bookCover2 from "@/assets/book-cover-2.png";
+import coverMilestones from "@/assets/cover-milestones.jpg";
+import coverLifeTaughtMe from "@/assets/cover-life-taught-me.jpg";
+
+export type Loc = { ar: string; en: string };
 
 export interface Book {
   slug: string;
   cover: string;
-  category: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  introduction: string;
-  authorIntro: string;
+  category: Loc;
+  title: Loc;
+  excerpt: Loc;
+  author: Loc;
+  /** Path to a readable PDF (served from /public). When present, the book can be read online. */
+  pdf?: string;
+  /** The book's text is in Arabic; the English UI shows a note. */
+  arabicContent?: boolean;
+  introduction?: string;
+  authorIntro?: string;
 }
+
+const AUTHOR: Loc = { ar: "أسامة كرم إمسيح", en: "Osama Karam Imseeh" };
 
 export const books: Book[] = [
   {
+    slug: "milestones-on-lifes-paths",
+    cover: coverMilestones,
+    category: { ar: "حكمة لكل يوم", en: "Wisdom for Every Day" },
+    title: { ar: "شواخص على دروب الحياة", en: "Milestones on Life's Paths" },
+    excerpt: {
+      ar: "مجموعة من التأملات والمواعظ القصيرة التي تضيء دروب الحياة بحكمةٍ لكل يوم. من الكتب التي تُدرّس في عددٍ من المدارس الأردنية.",
+      en: "A collection of short reflections and meditations that light the paths of life with wisdom for every day. Among the books taught in several Jordanian schools.",
+    },
+    author: AUTHOR,
+    pdf: "/books/milestones-on-lifes-paths.pdf",
+    arabicContent: true,
+  },
+  {
+    slug: "life-taught-me",
+    cover: coverLifeTaughtMe,
+    category: { ar: "تأملات في الحياة", en: "Reflections on Life" },
+    title: { ar: "علمتني الحياة", en: "Life Taught Me" },
+    excerpt: {
+      ar: "خلاصة تجاربَ ودروسٍ استقاها الكاتب من مسيرة حياته، ليشارك القارئ ما علّمته إياه الأيام من حكمةٍ وإيمان.",
+      en: "A distillation of the experiences and lessons the author drew from his life's journey, sharing with the reader what the days have taught him of wisdom and faith.",
+    },
+    author: AUTHOR,
+    pdf: "/books/life-taught-me.pdf",
+    arabicContent: true,
+  },
+  {
     slug: "how-to-reach-the-kingdom",
     cover: bookCover1,
-    category: "تأملات وخبرات روحية — الكتاب الثالث",
-    title: "كيف تصل إلى الملكوت؟",
-    excerpt:
-      "الحياة الروحية ليست وقفاً على أحد من الناس، بل هي من نصيب جميع الناس. يحتوي هذا الكتيب على «ساندويشات روحية» تأخذها سريعاً وتغذي بها نفسك.",
-    author: "أسامة كرم إمسيح",
+    category: { ar: "تأملات وخبرات روحية — الكتاب الثالث", en: "Spiritual Reflections & Experiences — Book Three" },
+    title: { ar: "كيف تصل إلى الملكوت؟", en: "How Do You Reach the Kingdom?" },
+    excerpt: {
+      ar: "الحياة الروحية ليست وقفاً على أحد من الناس، بل هي من نصيب جميع الناس. يحتوي هذا الكتيب على «ساندويشات روحية» تأخذها سريعاً وتغذي بها نفسك.",
+      en: "The spiritual life is not reserved for a few; it is the portion of all people. This booklet offers 'spiritual snacks' you can take quickly to nourish your soul.",
+    },
+    author: AUTHOR,
+    arabicContent: true,
     introduction: `الحياة الروحية ليست وقفا على أحد من الناس، بل هي من نصيب جميع الناس، مهما كانت ظروفهم المادية واحوالهم الصحية ومستوياتهم الاجتماعية. فالسيد المسيح يدعو جميع الناس إلى اكتساب دار النعيم بحياة البر والتقوى والقداسة، ويشعل في قلوب محبيه نور الايمان، ويزرع فيهم الرغبة في الاعالي كي يعيشوا كلمته الخلاصية ويحملوها إلى الكثيرين، فيكونوا بعضهم لبعض سندا وشركاء في النعمة والايمان والحب والنور والسلام.
 
 يحتوي هذا الكتيب على «ساندويشات روحية» تأخذها سريعا وتغذي بها نفسك. وقد وزعها الكاتب بالوسائل العصرية، على المواقع الالكترونية والتلفون المحمول، إلى الأصدقاء والأحباء الذين أرادوا ان يشتركوا في خبرته الروحية.
@@ -44,11 +83,14 @@ export const books: Book[] = [
   {
     slug: "who-do-you-say-i-am",
     cover: bookCover2,
-    category: "تأملات وخبرات روحية — الكتاب السابع",
-    title: "«وأنتم من تقولون إني أنا؟»",
-    excerpt:
-      "سؤال سأله الرب يسوع لتلاميذه، وعلى إجابة هذا السؤال تقرر مصيرهم الأرضي ومصير حياتهم الأبدية. يحوي الكتاب 29 فصلاً و365 فقرة على عدد أيام السنة.",
-    author: "أسامة كرم إمسيح",
+    category: { ar: "تأملات وخبرات روحية — الكتاب السابع", en: "Spiritual Reflections & Experiences — Book Seven" },
+    title: { ar: "«وأنتم من تقولون إني أنا؟»", en: "“But Who Do You Say I Am?”" },
+    excerpt: {
+      ar: "سؤال سأله الرب يسوع لتلاميذه، وعلى إجابة هذا السؤال تقرر مصيرهم الأرضي ومصير حياتهم الأبدية. يحوي الكتاب 29 فصلاً و365 فقرة على عدد أيام السنة.",
+      en: "A question Jesus asked his disciples — on whose answer their earthly and eternal destiny was decided. The book contains 29 chapters and 365 passages, one for each day of the year.",
+    },
+    author: AUTHOR,
+    arabicContent: true,
     introduction: `ربما نستغرب من أن مؤلف كتاب «وأنتم من تقولون إني أنا هو؟» ليس معلم لاهوت أو عالما من علماء الكتاب المقدس الذين تعلموا في احدى جامعات روما أو أثينا، ولا خريج كلية فلسفة، ولا طبيبا لعلاج الأمراض النفسية والعصبية، ولا واعظا على المنابر، رغم أنه ملمّ بحقائق اللاهوت ويعرف الكتاب المقدس معرفة عميقة ولديه من الحكمة ومعرفة النفس البشرية ما يجعله قادرا على الإقناع والموعظة الحسنة.
 
 مؤلف هذا الكتاب هو الصديق أسامة كرم إمسيح، رجل الأعمال المعروف ونقيب أصحاب محلات الصاغة والمجوهرات. لقد واصل التعلم على نفسه وجمع بين المعرفة والخبرة الإنسانية اللتين تفاعلتا في الصلاة والتأمل فاكتسب حكمة عميقة أراد أن يشركنا بها.

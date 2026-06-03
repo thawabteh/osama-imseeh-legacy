@@ -3,8 +3,22 @@ import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { books } from "@/lib/books-data";
+import { useLang } from "@/lib/i18n";
+
+// The library's readable PDF books live in their own section; here we show reflections.
+const reflectionBooks = books.filter((b) => !b.pdf);
+
+const COPY = {
+  ar: { tag: "مكتبة روحية", headA: "تأملات في ", headB: "الإيمان والحياة", more: "اكتشف المزيد" },
+  en: { tag: "Spiritual Library", headA: "Reflections on ", headB: "Faith & Life", more: "Discover more" },
+} as const;
+
+const arFont = { fontFamily: "'Montserrat Arabic', sans-serif" } as const;
 
 const BlogSection = () => {
+  const { lang } = useLang();
+  const t = COPY[lang];
+
   return (
     <section id="blog" className="py-32 teal-gradient-bg overflow-hidden relative">
       {/* Decorative glow */}
@@ -12,29 +26,22 @@ const BlogSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="mb-20 text-right">
-          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-end">
+        <div className="mb-20 text-start">
+          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-start">
             <Sparkles className="w-5 h-5 text-primary" />
-            <p
-              className="text-primary text-xl md:text-2xl"
-              style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
-            >
-              مكتبة روحية
+            <p className="text-primary text-xl md:text-2xl" style={arFont}>
+              {t.tag}
             </p>
           </motion.div>
-          <motion.h2
-            {...fadeInUp}
-            transition={withDelay(0.1)}
-            style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
-          >
-            <span className="text-foreground text-5xl md:text-6xl lg:text-7xl">تأملات في </span>
-            <span className="text-primary text-5xl md:text-6xl lg:text-7xl">الإيمان والحياة</span>
+          <motion.h2 {...fadeInUp} transition={withDelay(0.1)} style={{ ...arFont, fontWeight: 700 }}>
+            <span className="text-foreground text-5xl md:text-6xl lg:text-7xl">{t.headA}</span>
+            <span className="text-primary text-5xl md:text-6xl lg:text-7xl">{t.headB}</span>
           </motion.h2>
         </div>
 
         {/* Blog cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {books.map((post, i) => (
+          {reflectionBooks.map((post, i) => (
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 30 }}
@@ -46,66 +53,53 @@ const BlogSection = () => {
             >
               <Link to={`/book/${post.slug}`}>
                 <div className="relative rounded-2xl border border-foreground/10 bg-foreground/5 backdrop-blur-sm overflow-hidden transition-all duration-500 group-hover:border-primary/30 group-hover:bg-foreground/8">
-                  {/* Top glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-b from-primary/0 to-transparent group-hover:from-primary/8 transition-all duration-500 rounded-2xl" />
 
                   {/* Book cover image */}
                   <div className="relative z-10 overflow-hidden">
                     <img
                       src={post.cover}
-                      alt={post.title}
+                      alt={post.title[lang]}
                       className="w-full h-64 md:h-72 object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
                   </div>
 
-                  <div className="relative z-10 text-right p-8 md:p-10">
+                  <div className="relative z-10 text-start p-8 md:p-10">
                     {/* Meta */}
-                    <div className="flex items-center gap-3 mb-5 justify-end">
-                      <span
-                        className="text-primary text-base md:text-lg"
-                        style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
-                      >
-                        {post.category}
+                    <div className="flex items-center gap-3 mb-5 justify-start">
+                      <span className="text-primary text-base md:text-lg" style={arFont}>
+                        {post.category[lang]}
                       </span>
                     </div>
 
                     {/* Title */}
                     <h3
                       className="text-foreground text-2xl md:text-3xl mb-4 leading-snug transition-colors duration-300 group-hover:text-primary"
-                      style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
+                      style={{ ...arFont, fontWeight: 700 }}
                     >
-                      {post.title}
+                      {post.title[lang]}
                     </h3>
 
                     {/* Decorative line */}
-                    <div className="w-12 h-px bg-primary/30 mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-primary/60 mr-0 ml-auto" />
+                    <div className="w-12 h-px bg-primary/30 mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-primary/60 me-auto" />
 
                     {/* Excerpt */}
-                    <p
-                      className="text-foreground/60 text-lg md:text-xl leading-[1.9] mb-6"
-                      style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
-                    >
-                      {post.excerpt}
+                    <p className="text-foreground/60 text-lg md:text-xl leading-[1.9] mb-6" style={arFont}>
+                      {post.excerpt[lang]}
                     </p>
 
                     {/* Author & CTA */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-primary transition-all duration-300 group-hover:gap-4">
-                        <ArrowLeft className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-2" />
-                        <span
-                          className="text-lg"
-                          style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
-                        >
-                          اكتشف المزيد
+                        <ArrowLeft className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-2 ltr:rotate-180" />
+                        <span className="text-lg" style={{ ...arFont, fontWeight: 700 }}>
+                          {t.more}
                         </span>
                       </div>
-                      <span
-                        className="text-foreground/40 text-base"
-                        style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
-                      >
-                        {post.author}
+                      <span className="text-foreground/40 text-base" style={arFont}>
+                        {post.author[lang]}
                       </span>
                     </div>
                   </div>

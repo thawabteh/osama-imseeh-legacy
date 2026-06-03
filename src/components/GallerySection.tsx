@@ -1,20 +1,28 @@
 import { motion } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import { Camera } from "lucide-react";
-import gp1 from "@/assets/gallery-portrait-1.jpg";
-import gp2 from "@/assets/gallery-portrait-2.jpg";
-import gp3 from "@/assets/gallery-portrait-3.jpg";
-import gp4 from "@/assets/gallery-portrait-4.jpg";
-import gp5 from "@/assets/gallery-portrait-5.jpg";
-import gp6 from "@/assets/gallery-portrait-6.jpg";
-import gp7 from "@/assets/gallery-portrait-7.jpg";
-import gp8 from "@/assets/gallery-portrait-8.jpg";
-import gp9 from "@/assets/gallery-portrait-9.jpg";
-import gp10 from "@/assets/gallery-portrait-10.jpg";
+import { useLang } from "@/lib/i18n";
+import gp1 from "@/assets/photo-gallery-01.jpg";
+import gp2 from "@/assets/photo-gallery-02.jpg";
+import gp3 from "@/assets/photo-gallery-03.jpg";
+import gp4 from "@/assets/photo-gallery-04.jpg";
+import gp5 from "@/assets/photo-gallery-05.jpg";
+import gp6 from "@/assets/photo-gallery-06.jpg";
+import gp7 from "@/assets/photo-gallery-07.jpg";
+import gp8 from "@/assets/photo-gallery-08.jpg";
+import gp9 from "@/assets/photo-gallery-09.jpg";
+import gp10 from "@/assets/photo-gallery-10.jpg";
 
 const images = [gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8, gp9, gp10];
 
+const COPY = {
+  ar: { tag: "محطات بارزة", headA: "حياة في ", headB: "خدمة الوطن", alt: "أسامة إمسيح" },
+  en: { tag: "Highlights", headA: "A Life in ", headB: "Service of the Nation", alt: "Osama Imseeh" },
+} as const;
+
 const GallerySection = () => {
+  const { lang } = useLang();
+  const t = COPY[lang];
   return (
     <section id="gallery" className="py-32 teal-gradient-bg overflow-hidden relative">
       {/* Decorative glow */}
@@ -22,14 +30,14 @@ const GallerySection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="mb-20 text-right">
-          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-end">
+        <div className="mb-20 text-start">
+          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-4 justify-start">
             <Camera className="w-5 h-5 text-primary" />
             <p
               className="text-primary text-xl md:text-2xl"
               style={{ fontFamily: "'Montserrat Arabic', sans-serif" }}
             >
-              محطات بارزة
+              {t.tag}
             </p>
           </motion.div>
           <motion.h2
@@ -37,8 +45,8 @@ const GallerySection = () => {
             transition={withDelay(0.1)}
             style={{ fontFamily: "'Montserrat Arabic', sans-serif", fontWeight: 700 }}
           >
-            <span className="text-foreground text-5xl md:text-6xl lg:text-7xl">حياة في </span>
-            <span className="text-primary text-5xl md:text-6xl lg:text-7xl">خدمة الوطن</span>
+            <span className="text-foreground text-5xl md:text-6xl lg:text-7xl">{t.headA}</span>
+            <span className="text-primary text-5xl md:text-6xl lg:text-7xl">{t.headB}</span>
           </motion.h2>
         </div>
 
@@ -55,7 +63,7 @@ const GallerySection = () => {
             >
               <img
                 src={src}
-                alt="أسامة إمسيح"
+                alt={t.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />

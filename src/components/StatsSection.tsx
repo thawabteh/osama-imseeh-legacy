@@ -1,11 +1,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useLang } from "@/lib/i18n";
 
-const stats = [
-  { value: 12, prefix: "", label: "قطاعاً", size: "text-7xl md:text-9xl" },
-  { value: 30, prefix: "+", label: "عاماً من الخبرة", size: "text-9xl md:text-[12rem]" },
-  { value: 1, prefix: "", label: "إرث", size: "text-7xl md:text-9xl" },
-];
+const STATS = {
+  ar: [
+    { value: 12, prefix: "", label: "قطاعاً", size: "text-7xl md:text-9xl" },
+    { value: 30, prefix: "+", label: "عاماً من الخبرة", size: "text-9xl md:text-[12rem]" },
+    { value: 1, prefix: "", label: "إرث", size: "text-7xl md:text-9xl" },
+  ],
+  en: [
+    { value: 12, prefix: "", label: "Sectors", size: "text-7xl md:text-9xl" },
+    { value: 30, prefix: "+", label: "Years of Experience", size: "text-9xl md:text-[12rem]" },
+    { value: 1, prefix: "", label: "Legacy", size: "text-7xl md:text-9xl" },
+  ],
+} as const;
 
 const CountUp = ({ target, prefix, duration = 2 }: { target: number; prefix: string; duration?: number }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -29,6 +37,8 @@ const CountUp = ({ target, prefix, duration = 2 }: { target: number; prefix: str
 };
 
 const StatsSection = () => {
+  const { lang } = useLang();
+  const stats = STATS[lang];
   return (
     <section className="py-32 md:py-40 teal-gradient-bg overflow-hidden">
       <div className="container mx-auto px-6">
