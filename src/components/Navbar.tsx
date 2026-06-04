@@ -57,14 +57,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <a href="#" className="text-foreground text-2xl md:text-3xl font-normal" style={fontStyle}>
+        <a href="/" className="text-foreground text-2xl md:text-3xl font-normal" style={fontStyle}>
           {t.name}
         </a>
 
         <div className="hidden md:flex items-center gap-6">
           {t.items.map((item, i) => (
             <div key={item.label} className="flex items-center gap-6">
-              <a href={item.href} className="nav-link link-underline text-base" style={fontStyle}>
+              <a href={`/${item.href}`} className="nav-link link-underline text-base" style={fontStyle}>
                 {item.label}
               </a>
               {i < t.items.length - 1 && (
@@ -115,7 +115,7 @@ const Navbar = () => {
           {t.items.map((item) => (
             <a
               key={item.label}
-              href={item.href}
+              href={`/${item.href}`}
               className="block py-3 nav-link"
               style={fontStyle}
               onClick={() => setMobileOpen(false)}
