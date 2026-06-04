@@ -75,6 +75,14 @@ const BookReader = () => {
 
   const pageWidth = useMemo(() => Math.min(containerWidth, 860) * zoom, [containerWidth, zoom]);
 
+  // Safety net: if the custom renderer hasn't loaded any page within 12s
+  // (e.g. the pdf.js worker failed silently), fall back to the native viewer.
+  useEffect(() => {
+    if (numPages > 0 || loadError) return;
+    const id = window.setTimeout(() => setLoadError(true), 12000);
+    return () => window.clearTimeout(id);
+  }, [numPages, loadError]);
+
   const goPrev = useCallback(() => setPageNumber((p) => Math.max(1, p - 1)), []);
   const goNext = useCallback(() => setPageNumber((p) => Math.min(numPages || p, p + 1)), [numPages]);
 
@@ -132,9 +140,12 @@ const BookReader = () => {
       {/* Reader area */}
       <div ref={containerRef} className="flex-1 w-full max-w-5xl mx-auto px-2 md:px-6 py-6 md:py-10">
         {loadError ? (
-          <div className="flex flex-col items-center justify-center gap-4 py-32 text-center">
-            <p className="text-foreground text-xl" style={arFont}>{t.errorLoad}</p>
-            <a href={book.pdf} download className="text-primary text-lg" style={{ ...arFont, fontWeight: 700 }}>
+          /* Fallback: the browser's built-in PDF viewer. Always works without the pdf.js worker. */
+          <div className="flex flex-col gap-4">
+            <object data={book.pdf} type="application/pdf" className="w-full rounded-xl border border-foreground/10 bg-white" style={{ height: "82vh" }}>
+              <iframe src={book.pdf} title={book.title[lang]} className="w-full rounded-xl border border-foreground/10 bg-white" style={{ height: "82vh" }} />
+            </object>
+            <a href={book.pdf} download className="text-primary text-lg text-center" style={{ ...arFont, fontWeight: 700 }}>
               {t.errorDownload}
             </a>
           </div>
