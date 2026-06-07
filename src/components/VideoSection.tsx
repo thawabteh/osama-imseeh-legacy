@@ -7,6 +7,8 @@ import { useLang } from "@/lib/i18n";
 // Reels shown in the player; add more paths here to extend the list.
 const videos = [
   "/videos/imseeh-r14.mp4",
+  "/videos/imseeh-r21.mp4",
+  "/videos/imseeh-school.mp4",
   "/videos/imseeh-video.mp4",
 ];
 
