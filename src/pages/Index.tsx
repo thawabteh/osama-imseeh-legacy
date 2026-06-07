@@ -26,7 +26,6 @@ const Index = () => {
       <AchievementsSection />
       <SectionDivider variant="fade" />
       <ValuesSection />
-      <SectionDivider variant="ornament" />
       <QuoteSection />
       <SectionDivider variant="fade" />
       <BooksSection />
