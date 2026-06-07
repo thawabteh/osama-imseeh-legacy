@@ -31,7 +31,7 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt="أسامة إمسيح"
-          className="w-full h-full object-cover object-[35%_25%] rtl:object-[65%_25%]"
+          className="w-full h-full object-cover object-[center_25%] scale-[1.12] translate-x-[6%] rtl:-translate-x-[6%]"
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/50 to-transparent ltr:bg-gradient-to-r" />
