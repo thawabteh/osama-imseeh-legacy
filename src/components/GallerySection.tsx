@@ -26,9 +26,11 @@ import hlHonor from "@/assets/highlight-royal-honor.jpg";
 import hlLecture from "@/assets/highlight-lecture.jpg";
 import hlGathering from "@/assets/highlight-imseeh-gathering.jpg";
 
+// Ordered so neighbouring photos are visually distinct (no two similar
+// poses/looks adjacent), since many shots come from the same session.
 const images = [
-  gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8, gp9, gp10,
-  gp11, gp12, gp13, gp14, gp15, gp16, gp17, gp18, gp19, gp20,
+  gp1, gp2, gp3, gp6, gp4, gp8, gp5, gp12, gp11, gp7,
+  gp10, gp17, gp9, gp14, gp15, gp16, gp18, gp13, gp19, gp20,
 ];
 
 const featuredImages = [hlHonor, hlLecture, hlGathering];
