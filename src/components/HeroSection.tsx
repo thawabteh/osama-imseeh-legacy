@@ -31,16 +31,16 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt="أسامة إمسيح"
-          className="w-full h-full object-cover object-[center_25%]"
+          className="w-full h-full object-cover object-[68%_25%]"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/50 to-transparent ltr:bg-gradient-to-r" />
+        <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/50 to-transparent" />
       </div>
 
       {/* Content overlay - reading-start side */}
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex justify-start">
-          <div className="max-w-xl text-start py-24">
+        <div className="flex justify-start ltr:justify-end">
+          <div className="max-w-xl text-start ltr:text-end py-24">
             <motion.h1
               {...fadeInUp}
               transition={withDelay(0.2)}
@@ -53,7 +53,7 @@ const HeroSection = () => {
             <motion.p
               {...fadeInUp}
               transition={withDelay(0.4)}
-              className="text-muted-foreground text-lg md:text-2xl max-w-lg me-auto leading-[2]"
+              className="text-muted-foreground text-lg md:text-2xl max-w-lg me-auto ltr:me-0 ltr:ms-auto leading-[2]"
               style={arFont}
             >
               {t.sub}
