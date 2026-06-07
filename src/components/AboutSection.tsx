@@ -62,12 +62,12 @@ const AboutSection = () => {
             className="w-full h-full object-cover object-[center_30%]"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/40 to-background/20 ltr:bg-gradient-to-r" />
+          <div className="absolute inset-0 bg-gradient-to-l from-background/90 via-background/40 to-background/20" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex justify-start">
-            <div className="max-w-xl text-start">
+          <div className="flex justify-start ltr:justify-end">
+            <div className="max-w-xl text-start ltr:text-end">
               <motion.p
                 {...fadeInUp}
                 className="text-foreground/70 mb-4 text-2xl md:text-3xl"
