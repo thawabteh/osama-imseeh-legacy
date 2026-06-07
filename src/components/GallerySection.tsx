@@ -12,11 +12,24 @@ import gp7 from "@/assets/photo-gallery-07.jpg";
 import gp8 from "@/assets/photo-gallery-08.jpg";
 import gp9 from "@/assets/photo-gallery-09.jpg";
 import gp10 from "@/assets/photo-gallery-10.jpg";
+import gp11 from "@/assets/photo-gallery-11.jpg";
+import gp12 from "@/assets/photo-gallery-12.jpg";
+import gp13 from "@/assets/photo-gallery-13.jpg";
+import gp14 from "@/assets/photo-gallery-14.jpg";
+import gp15 from "@/assets/photo-gallery-15.jpg";
+import gp16 from "@/assets/photo-gallery-16.jpg";
+import gp17 from "@/assets/photo-gallery-17.jpg";
+import gp18 from "@/assets/photo-gallery-18.jpg";
+import gp19 from "@/assets/photo-gallery-19.jpg";
+import gp20 from "@/assets/photo-gallery-20.jpg";
 import hlHonor from "@/assets/highlight-royal-honor.jpg";
 import hlLecture from "@/assets/highlight-lecture.jpg";
 import hlGathering from "@/assets/highlight-imseeh-gathering.jpg";
 
-const images = [gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8, gp9, gp10];
+const images = [
+  gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8, gp9, gp10,
+  gp11, gp12, gp13, gp14, gp15, gp16, gp17, gp18, gp19, gp20,
+];
 
 const featuredImages = [hlHonor, hlLecture, hlGathering];
 
