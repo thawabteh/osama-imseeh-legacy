@@ -28,14 +28,14 @@ const COPY = {
     headA: "حياة في ",
     headB: "خدمة الوطن",
     alt: "أسامة إمسيح",
-    featured: ["تكريم ملكي", "محاضرة لطلبة الجامعة", "لقاء عائلة إمسيح"],
+    featured: ["وسام اليوبيل الفضي من جلالة الملك عبد الله الثاني", "محاضرة لطلبة الجامعة", "لقاء عائلة إمسيح"],
   },
   en: {
     tag: "Highlights",
     headA: "A Life in ",
     headB: "Service of the Nation",
     alt: "Osama Imseeh",
-    featured: ["A Royal Honor", "A University Lecture", "An Imseeh Gathering"],
+    featured: ["The Silver Jubilee Medal — from H.M. King Abdullah II", "A University Lecture", "An Imseeh Gathering"],
   },
 } as const;
 
