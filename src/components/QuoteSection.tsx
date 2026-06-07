@@ -38,13 +38,6 @@ const QuoteSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: quinticEase }}
           >
-            {/* Top decorative line + quote mark */}
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <div className="w-24 h-px bg-primary" />
-              <span className="text-primary text-5xl" style={{ fontFamily: "'Lateef', serif" }}>&#x201C;</span>
-              <div className="w-24 h-px bg-primary" />
-            </div>
-
             <blockquote
               className="text-3xl md:text-4xl lg:text-5xl text-foreground leading-[1.8] mb-12"
               style={{ fontFamily: "'Lateef', serif" }}
