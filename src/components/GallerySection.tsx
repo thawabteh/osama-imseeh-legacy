@@ -25,6 +25,9 @@ import gp20 from "@/assets/photo-gallery-20.jpg";
 import hlHonor from "@/assets/highlight-royal-honor.jpg";
 import hlLecture from "@/assets/highlight-lecture.jpg";
 import hlGathering from "@/assets/highlight-imseeh-gathering.jpg";
+import hlStudentsTalk from "@/assets/highlight-students-talk.jpg";
+import hlImseehEvening from "@/assets/highlight-imseeh-evening.jpg";
+import hlUniversitySession from "@/assets/highlight-university-session.jpg";
 
 // Ordered so neighbouring photos are visually distinct (no two similar
 // poses/looks adjacent), since many shots come from the same session.
@@ -33,7 +36,7 @@ const images = [
   gp10, gp17, gp9, gp14, gp15, gp16, gp18, gp13, gp19, gp20,
 ];
 
-const featuredImages = [hlHonor, hlLecture, hlGathering];
+const featuredImages = [hlHonor, hlLecture, hlGathering, hlStudentsTalk, hlImseehEvening, hlUniversitySession];
 
 const arFont = { fontFamily: "'Montserrat Arabic', sans-serif" } as const;
 
@@ -43,14 +46,14 @@ const COPY = {
     headA: "حياة في ",
     headB: "خدمة الوطن",
     alt: "أسامة إمسيح",
-    featured: ["وسام اليوبيل الفضي من جلالة الملك عبد الله الثاني", "محاضرة لطلبة الجامعة", "لقاء عائلة إمسيح"],
+    featured: ["وسام اليوبيل الفضي من جلالة الملك عبد الله الثاني", "محاضرة لطلبة الجامعة", "لقاء عائلة إمسيح", "حوار مع الطلبة", "أمسية إمسيح", "لقاء جامعي"],
   },
   en: {
     tag: "Highlights",
     headA: "A Life in ",
     headB: "Service of the Nation",
     alt: "Osama Imseeh",
-    featured: ["The Silver Jubilee Medal — from H.M. King Abdullah II", "A University Lecture", "An Imseeh Gathering"],
+    featured: ["The Silver Jubilee Medal — from H.M. King Abdullah II", "A University Lecture", "An Imseeh Gathering", "In Dialogue with Students", "An Imseeh Evening", "A University Session"],
   },
 } as const;
 
