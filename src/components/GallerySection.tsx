@@ -29,16 +29,19 @@ import hlStudentsTalk from "@/assets/highlight-students-talk.jpg";
 import hlImseehEvening from "@/assets/highlight-imseeh-evening.jpg";
 import hlUniversitySession from "@/assets/highlight-university-session.jpg";
 
-// Ordered so neighbouring photos are visually distinct (no two similar
-// poses/looks adjacent), since many shots come from the same session.
+// Studio portraits ordered so neighbouring photos look distinct, followed
+// by the event/highlight photos.
 const images = [
   gp1, gp2, gp3, gp6, gp4, gp8, gp5, gp12, gp11, gp7,
   gp10, gp17, gp9, gp14, gp15, gp16, gp18, gp13, gp19, gp20,
+  hlHonor, hlLecture, hlGathering, hlStudentsTalk, hlImseehEvening, hlUniversitySession,
 ];
 
-const featuredImages = [hlHonor, hlLecture, hlGathering, hlStudentsTalk, hlImseehEvening, hlUniversitySession];
-
-const arFont = { fontFamily: "'Montserrat Arabic', sans-serif" } as const;
+// Custom crop focal point for wide shots that would otherwise be cropped
+// off-subject in the portrait grid cells.
+const imagePosition: Record<string, string> = {
+  [hlUniversitySession]: "object-left",
+};
 
 const COPY = {
   ar: {
@@ -46,14 +49,12 @@ const COPY = {
     headA: "حياة في ",
     headB: "خدمة الوطن",
     alt: "أسامة إمسيح",
-    featured: ["وسام اليوبيل الفضي من جلالة الملك عبد الله الثاني", "محاضرة لطلبة الجامعة", "لقاء عائلة إمسيح", "حوار مع الطلبة", "أمسية إمسيح", "لقاء جامعي"],
   },
   en: {
     tag: "Highlights",
     headA: "A Life in ",
     headB: "Service of the Nation",
     alt: "Osama Imseeh",
-    featured: ["The Silver Jubilee Medal — from H.M. King Abdullah II", "A University Lecture", "An Imseeh Gathering", "In Dialogue with Students", "An Imseeh Evening", "A University Session"],
   },
 } as const;
 
@@ -87,34 +88,6 @@ const GallerySection = () => {
           </motion.h2>
         </div>
 
-        {/* Featured highlights - important moments shown large and uncropped */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-          {featuredImages.map((src, i) => (
-            <motion.figure
-              key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: quinticEase, delay: 0.1 * i }}
-              className="group relative overflow-hidden rounded-2xl border border-foreground/10 aspect-[3/2]"
-            >
-              <img
-                src={src}
-                alt={t.featured[i]}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/15 to-transparent" />
-              <figcaption
-                className="absolute bottom-0 inset-x-0 p-5 text-foreground text-lg md:text-xl text-start"
-                style={{ ...arFont, fontWeight: 700 }}
-              >
-                {t.featured[i]}
-              </figcaption>
-            </motion.figure>
-          ))}
-        </div>
-
         {/* Gallery grid - uniform, aligned */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.map((src, i) => (
@@ -129,7 +102,7 @@ const GallerySection = () => {
               <img
                 src={src}
                 alt={t.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${imagePosition[src] ?? ""}`}
                 loading="lazy"
               />
               {/* Hover overlay */}
