@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
-import { Camera } from "lucide-react";
+import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import gp1 from "@/assets/photo-gallery-01.jpg";
 import gp2 from "@/assets/photo-gallery-02.jpg";
@@ -40,6 +41,9 @@ const images = [
   hlStudentsTalk, hlImseehEvening, hlUniversitySession,
 ];
 
+// Every image, in display order, for the click-to-expand lightbox.
+const allImages = [...featuredImages, ...images];
+
 // Custom crop focal point for wide shots that would otherwise be cropped
 // off-subject in the portrait grid cells.
 const imagePosition: Record<string, string> = {
@@ -55,6 +59,9 @@ const COPY = {
     headB: "خدمة الوطن",
     alt: "أسامة إمسيح",
     featured: ["وسام اليوبيل الفضي من جلالة الملك عبد الله الثاني", "محاضرة لطلبة الجامعة", "لقاء عائلة إمسيح"],
+    close: "إغلاق",
+    prev: "السابق",
+    next: "التالي",
   },
   en: {
     tag: "Highlights",
@@ -62,12 +69,44 @@ const COPY = {
     headB: "Service of the Nation",
     alt: "Osama Imseeh",
     featured: ["The Silver Jubilee Medal — from H.M. King Abdullah II", "A University Lecture", "An Imseeh Gathering"],
+    close: "Close",
+    prev: "Previous",
+    next: "Next",
   },
 } as const;
 
 const GallerySection = () => {
   const { lang } = useLang();
   const t = COPY[lang];
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  const go = (dir: number) =>
+    setLightbox((v) => (v === null ? v : (v + dir + allImages.length) % allImages.length));
+
+  // Keyboard control + scroll lock while the lightbox is open.
+  useEffect(() => {
+    if (lightbox === null) return;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+      else if (e.key === "ArrowRight") go(1);
+      else if (e.key === "ArrowLeft") go(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lightbox]);
+
+  const openKey = (e: React.KeyboardEvent, idx: number) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setLightbox(idx);
+    }
+  };
+
   return (
     <section id="gallery" className="py-32 teal-gradient-bg overflow-hidden relative">
       {/* Decorative glow */}
@@ -104,7 +143,12 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: quinticEase, delay: 0.1 * i }}
-              className="group relative overflow-hidden rounded-2xl border border-foreground/10 aspect-[3/2]"
+              onClick={() => setLightbox(i)}
+              onKeyDown={(e) => openKey(e, i)}
+              role="button"
+              tabIndex={0}
+              aria-label={t.featured[i]}
+              className="group relative overflow-hidden rounded-2xl border border-foreground/10 aspect-[3/2] cursor-pointer"
             >
               <img
                 src={src}
@@ -132,7 +176,12 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: quinticEase, delay: 0.08 * (i % 4) }}
-              className="group relative overflow-hidden rounded-xl border border-foreground/10 aspect-[3/4]"
+              onClick={() => setLightbox(featuredImages.length + i)}
+              onKeyDown={(e) => openKey(e, featuredImages.length + i)}
+              role="button"
+              tabIndex={0}
+              aria-label={t.alt}
+              className="group relative overflow-hidden rounded-xl border border-foreground/10 aspect-[3/4] cursor-pointer"
             >
               <img
                 src={src}
@@ -146,6 +195,64 @@ const GallerySection = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-md p-4 md:p-10"
+            onClick={() => setLightbox(null)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              aria-label={t.close}
+              className="absolute top-5 right-5 z-10 flex items-center justify-center w-11 h-11 rounded-full bg-foreground/10 text-foreground transition-all hover:bg-primary hover:text-background"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); go(-1); }}
+              aria-label={t.prev}
+              className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full bg-foreground/10 text-foreground transition-all hover:bg-primary hover:text-background"
+            >
+              <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); go(1); }}
+              aria-label={t.next}
+              className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full bg-foreground/10 text-foreground transition-all hover:bg-primary hover:text-background"
+            >
+              <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
+            </button>
+
+            <motion.img
+              key={lightbox}
+              src={allImages[lightbox]}
+              alt={t.alt}
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.25, ease: quinticEase }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-h-[88vh] max-w-[92vw] object-contain rounded-xl shadow-2xl"
+            />
+
+            <div
+              dir="ltr"
+              className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 rounded-full bg-foreground/10 px-4 py-1.5 text-foreground/80 text-sm tabular-nums"
+              style={arFont}
+            >
+              {lightbox + 1} / {allImages.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
