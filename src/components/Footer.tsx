@@ -4,8 +4,8 @@ const COPY = {
   ar: {
     name: "أسامة إمسيح",
     socials: [
-      { label: "لينكدإن", href: "https://www.facebook.com/osama.imseeh.1/" },
-      { label: "انستاقرام", href: "https://www.facebook.com/osama.imseeh.1/" },
+      { label: "لينكدإن", href: "https://www.linkedin.com/in/osama-imseeh-a56a4b35/" },
+      { label: "انستاقرام", href: "https://www.instagram.com/osamaimseeh/" },
       { label: "فيسبوك", href: "https://www.facebook.com/osama.imseeh.1/" },
     ],
     rights: "جميع الحقوق محفوظة.",
@@ -13,8 +13,8 @@ const COPY = {
   en: {
     name: "Osama Imseeh",
     socials: [
-      { label: "LinkedIn", href: "https://www.facebook.com/osama.imseeh.1/" },
-      { label: "Instagram", href: "https://www.facebook.com/osama.imseeh.1/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/osama-imseeh-a56a4b35/" },
+      { label: "Instagram", href: "https://www.instagram.com/osamaimseeh/" },
       { label: "Facebook", href: "https://www.facebook.com/osama.imseeh.1/" },
     ],
     rights: "All rights reserved.",
@@ -38,6 +38,8 @@ const Footer = () => {
               key={s.label}
               className="text-foreground/70 hover:text-primary transition-colors duration-300 text-lg md:text-xl"
               href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
               style={arFont}
             >
               {s.label}
