@@ -11,9 +11,9 @@ const COPY = {
     headB: "الحوار",
     desc: "للاستفسارات المتعلقة بالمشاركات التحدثية، أو الشراكات الاستثمارية، أو الطلبات الإعلامية، يُرجى التواصل عبر النموذج أو القنوات أدناه.",
     socials: [
-      { label: "لينكدإن", href: "#" },
-      { label: "انستاقرام", href: "#" },
-      { label: "فيسبوك", href: "#" },
+      { label: "لينكدإن", href: "https://www.linkedin.com/in/osama-imseeh-a56a4b35/" },
+      { label: "انستاقرام", href: "https://www.instagram.com/osamaimseeh/" },
+      { label: "فيسبوك", href: "https://www.facebook.com/osama.imseeh.1/" },
     ],
     name: "الاسم",
     email: "البريد الإلكتروني",
@@ -26,9 +26,9 @@ const COPY = {
     headB: "Conversation",
     desc: "For speaking engagements, investment partnerships, or media inquiries, please reach out via the form or the channels below.",
     socials: [
-      { label: "LinkedIn", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "Facebook", href: "#" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/osama-imseeh-a56a4b35/" },
+      { label: "Instagram", href: "https://www.instagram.com/osamaimseeh/" },
+      { label: "Facebook", href: "https://www.facebook.com/osama.imseeh.1/" },
     ],
     name: "Name",
     email: "Email",
@@ -98,6 +98,8 @@ const ContactSection = () => {
                 <motion.a
                   key={platform.label}
                   href={platform.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
