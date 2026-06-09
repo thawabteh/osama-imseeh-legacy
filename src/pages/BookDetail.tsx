@@ -6,6 +6,7 @@ import { books } from "@/lib/books-data";
 import { useLang } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useDocumentTitle } from "@/lib/use-document-title";
 
 const COPY = {
   ar: {
@@ -37,6 +38,7 @@ const BookDetail = () => {
   const { lang } = useLang();
   const t = COPY[lang];
   const book = books.find((b) => b.slug === slug);
+  useDocumentTitle(book ? book.title[lang] : t.notFound);
 
   if (!book) {
     return (

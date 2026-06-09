@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { books } from "@/lib/books-data";
 import { useLang } from "@/lib/i18n";
+import { useDocumentTitle } from "@/lib/use-document-title";
 import "@/lib/pdf";
 
 const COPY = {
@@ -55,6 +56,7 @@ const BookReader = () => {
   const { lang, dir } = useLang();
   const t = COPY[lang];
   const book = books.find((b) => b.slug === slug);
+  useDocumentTitle(book ? book.title[lang] : undefined);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(800);

@@ -12,8 +12,10 @@ import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
+import { useDocumentTitle } from "@/lib/use-document-title";
 
 const Index = () => {
+  useDocumentTitle();
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
