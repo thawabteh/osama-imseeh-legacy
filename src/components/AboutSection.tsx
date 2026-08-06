@@ -11,18 +11,12 @@ const COPY = {
     headTop: "عــــــــن",
     headBottom: "أسامة",
     name: "أسامة كرم امسيح",
-    role: "كاتب ورائد أعمال",
     education: [
       "خريج كلية دي لاسال",
       "بكالوريوس إدارة الأعمال — بدأ دراسته في جامعة جنوب كاليفورنيا (USC) بالولايات المتحدة الأمريكية، وأكملها في الجامعة الأردنية (UJ)",
     ],
     quote:
-      "النجاح ليس محطة نصل إليها، بل هو الأثر الذي نتركه خلفنا. من قلب عمان، انطلقت رحلتي في عالم الأعمال والريادة، مؤمناً بأن القيم هي المحرك الحقيقي لأي إنجاز. هذا الموقع هو مساحتي الشخصية لأشارككم تجارب صقلتها الأيام، ورؤى استشرف بها المستقبل",
-    cards: [
-      { title: "الاستثمار الاستراتيجي", desc: "اكتشاف ورعاية الفرص التحويلية عبر قطاعات متنوعة." },
-      { title: "الخدمة العامة", desc: "المساهمة في صياغة سياسات تعزز الأساس الاقتصادي للأردن." },
-      { title: "التوجيه والإرشاد", desc: "تنمية الجيل القادم من القادة من خلال التوجيه المباشر والدعم." },
-    ],
+      "من تجارب الحياة وخبراتها، ومن محطاتها الصعبة والجميلة، بدأت رحلة صقلتها الأيام بالصبر والعمل والعطاء. فالحياة منجم، لا تُستخرج معادنه إلا بالصبر والعمل، وكل محطة فيها تحمل درساً، وكل إنجاز يترك أثراً. هنا أشارككم بعضاً من محطات رحلتي، وما حملته من لحظات قريبة إلى القلب، وتجارب صنعتني، وما تركته هذه الرحلة من أثر ومعانٍ أضعها بين أيديكم.",
   },
   en: {
     alt: "Osama Imseeh",
@@ -30,18 +24,12 @@ const COPY = {
     headTop: "About",
     headBottom: "Osama",
     name: "Osama Karam Imseeh",
-    role: "Author & Entrepreneur",
     education: [
       "Graduate of De La Salle College",
       "Bachelor of Business Administration — began his studies at the University of Southern California (USC) in the USA and completed them at the University of Jordan (UJ)",
     ],
     quote:
-      "Success is not a destination we reach, but the mark we leave behind. From the heart of Amman, my journey in business and entrepreneurship began, in the belief that values are the true engine of any achievement. This website is my personal space to share with you experiences shaped by time and a vision for the future.",
-    cards: [
-      { title: "Strategic Investment", desc: "Discovering and nurturing transformative opportunities across diverse sectors." },
-      { title: "Public Service", desc: "Contributing to policies that strengthen Jordan's economic foundation." },
-      { title: "Mentorship", desc: "Developing the next generation of leaders through direct guidance and support." },
-    ],
+      "From life's experiences — its hard stations and its beautiful ones — began a journey shaped by patience, work, and giving. Life is a mine whose metals are drawn out only through patience and labour: every station carries a lesson, and every achievement leaves a mark. Here I share some of the stations of my journey, the moments closest to my heart, the experiences that made me, and the meaning this road has left behind — which I now place in your hands.",
   },
 } as const;
 
@@ -177,7 +165,6 @@ const AboutSection = () => {
                 className="mt-8 text-center lg:text-start max-w-sm mx-auto lg:mx-0"
               >
                 <p className="text-foreground text-3xl md:text-4xl" style={arFont}>{t.name}</p>
-                <p className="text-primary text-xl md:text-2xl mt-2" style={arFont}>{t.role}</p>
 
                 {/* Education */}
                 <div className="mt-8 space-y-3">
@@ -192,46 +179,6 @@ const AboutSection = () => {
                 </div>
               </motion.div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Circular cards section */}
-      <section className="py-28 teal-gradient-bg overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
-            {t.cards.map((card, i) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: quinticEase, delay: 0.15 * i }}
-                className="flex items-center gap-4 md:gap-6"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] flex items-center justify-center cursor-pointer group/circle"
-                >
-                  <div className="absolute inset-0 rounded-full border border-foreground/10 transition-colors duration-500 group-hover/circle:border-primary/30" />
-                  <div className="absolute inset-3 md:inset-4 rounded-full border border-foreground/8 transition-colors duration-500 group-hover/circle:border-primary/20" />
-                  <div className="absolute inset-6 md:inset-8 rounded-full bg-gradient-to-br from-foreground/8 to-foreground/3 transition-all duration-500 group-hover/circle:from-primary/15 group-hover/circle:to-primary/5" />
-                  <div className="relative z-10 text-center px-10">
-                    <h3 className="text-2xl md:text-3xl text-foreground mb-3 transition-colors duration-300 group-hover/circle:text-primary" style={{ ...arFont, fontWeight: 700 }}>{card.title}</h3>
-                    <p className="text-foreground/60 text-lg md:text-xl leading-relaxed transition-colors duration-300 group-hover/circle:text-foreground/80" style={arFont}>{card.desc}</p>
-                  </div>
-                </motion.div>
-
-                {i < t.cards.length - 1 && (
-                  <div className="hidden md:flex items-center gap-1.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-foreground/30" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-foreground/30" />
-                    <div className="w-5 h-5 rounded-full bg-primary" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

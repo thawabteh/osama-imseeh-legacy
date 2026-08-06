@@ -8,6 +8,7 @@ const COPY = {
     name: "أسامة كرم امسيح",
     items: [
       { label: "الرؤية", href: "#about" },
+      { label: "الدراسات", href: "#studies" },
       { label: "المكتبة", href: "#books" },
       { label: "تأملات", href: "#blog" },
       { label: "محطات", href: "#gallery" },
@@ -19,6 +20,7 @@ const COPY = {
     name: "Osama Karam Imseeh",
     items: [
       { label: "Vision", href: "#about" },
+      { label: "Studies", href: "#studies" },
       { label: "Library", href: "#books" },
       { label: "Reflections", href: "#blog" },
       { label: "Highlights", href: "#gallery" },

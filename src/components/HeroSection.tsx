@@ -5,15 +5,15 @@ import heroBg from "@/assets/photo-hero.jpg";
 
 const COPY = {
   ar: {
-    titleTop: "إرثٌ من التميز",
-    titleBottom: "ورؤية للمستقبل",
-    sub: "محطات في القيادة، موروث الأصالة، ورؤى تجمع بين عراقة الماضي وطموح الغد.",
+    titleTop: "زوج وأب",
+    titleBottom: "وجدّ وكاتب",
+    sub: "يحمل من العائلة دفئها، ومن الحياة خبرتها، ومن الكتابة شغفها، ومن الكلمة أثرها.",
     scroll: "تصفّح",
   },
   en: {
-    titleTop: "A Legacy of Excellence",
-    titleBottom: "A Vision for the Future",
-    sub: "Milestones in leadership, a heritage of authenticity, and a vision that unites the richness of the past with the ambition of tomorrow.",
+    titleTop: "Husband & Father",
+    titleBottom: "Grandfather & Writer",
+    sub: "From family he carries its warmth, from life its experience, from writing its passion, and from the word its lasting mark.",
     scroll: "Scroll",
   },
 } as const;
