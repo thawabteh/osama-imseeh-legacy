@@ -5,19 +5,16 @@ import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import gp1 from "@/assets/photo-gallery-01.jpg";
 import gp2 from "@/assets/photo-gallery-02.jpg";
-import gp3 from "@/assets/photo-gallery-03.jpg";
 import gp4 from "@/assets/photo-gallery-04.jpg";
 import gp5 from "@/assets/photo-gallery-05.jpg";
 import gp6 from "@/assets/photo-gallery-06.jpg";
 import gp7 from "@/assets/photo-gallery-07.jpg";
-import gp8 from "@/assets/photo-gallery-08.jpg";
 import gp9 from "@/assets/photo-gallery-09.jpg";
 import gp10 from "@/assets/photo-gallery-10.jpg";
 import gp11 from "@/assets/photo-gallery-11.jpg";
 import gp12 from "@/assets/photo-gallery-12.jpg";
 import gp13 from "@/assets/photo-gallery-13.jpg";
 import gp14 from "@/assets/photo-gallery-14.jpg";
-import gp15 from "@/assets/photo-gallery-15.jpg";
 import gp16 from "@/assets/photo-gallery-16.jpg";
 import gp17 from "@/assets/photo-gallery-17.jpg";
 import gp18 from "@/assets/photo-gallery-18.jpg";
@@ -25,28 +22,18 @@ import gp19 from "@/assets/photo-gallery-19.jpg";
 import gp20 from "@/assets/photo-gallery-20.jpg";
 import hlHonor from "@/assets/highlight-royal-honor.jpg";
 import hlLecture from "@/assets/highlight-lecture.jpg";
-import hlStudentsTalk from "@/assets/highlight-students-talk.jpg";
-import hlUniversitySession from "@/assets/highlight-university-session.jpg";
 
 // The milestone photos shown large in the Featured Highlights row.
 const featuredImages = [hlHonor, hlLecture];
 
-// Studio portraits ordered so neighbouring photos look distinct, followed
-// by the remaining event photos.
+// Studio portraits ordered so neighbouring photos look distinct.
 const images = [
-  gp1, gp2, gp3, gp6, gp4, gp8, gp5, gp12, gp11, gp7,
-  gp10, gp17, gp9, gp14, gp15, gp16, gp18, gp13, gp19, gp20,
-  hlStudentsTalk, hlUniversitySession,
+  gp1, gp2, gp6, gp4, gp5, gp12, gp11, gp7,
+  gp10, gp17, gp9, gp14, gp16, gp18, gp13, gp19, gp20,
 ];
 
 // Every image, in display order, for the click-to-expand lightbox.
 const allImages = [...featuredImages, ...images];
-
-// Custom crop focal point for wide shots that would otherwise be cropped
-// off-subject in the portrait grid cells.
-const imagePosition: Record<string, string> = {
-  [hlUniversitySession]: "object-left",
-};
 
 const arFont = { fontFamily: "'Montserrat Arabic', sans-serif" } as const;
 
@@ -184,7 +171,7 @@ const GallerySection = () => {
               <img
                 src={src}
                 alt={t.alt}
-                className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${imagePosition[src] ?? ""}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
               {/* Hover overlay */}
