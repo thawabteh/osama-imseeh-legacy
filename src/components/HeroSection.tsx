@@ -44,11 +44,11 @@ const HeroSection = () => {
             <motion.h1
               {...fadeInUp}
               transition={withDelay(0.2)}
-              className="text-foreground mb-6"
+              className="text-foreground mb-8 md:mb-10"
               style={{ ...arFont, fontWeight: 400 }}
             >
               <span className="text-primary text-5xl md:text-7xl block leading-relaxed">{t.titleTop}</span>
-              <span className="text-foreground text-4xl md:text-6xl block leading-relaxed mt-2">{t.titleBottom}</span>
+              <span className="text-foreground text-4xl md:text-6xl block leading-relaxed mt-5 md:mt-8">{t.titleBottom}</span>
             </motion.h1>
             <motion.p
               {...fadeInUp}

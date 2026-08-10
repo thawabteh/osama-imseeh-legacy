@@ -7,7 +7,6 @@ import StudiesSection from "@/components/StudiesSection";
 import QuoteSection from "@/components/QuoteSection";
 import BooksSection from "@/components/BooksSection";
 import VideoSection from "@/components/VideoSection";
-import BlogSection from "@/components/BlogSection";
 import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -34,8 +33,6 @@ const Index = () => {
       <BooksSection />
       <SectionDivider variant="ornament" />
       <VideoSection />
-      <SectionDivider variant="fade" />
-      <BlogSection />
       <SectionDivider variant="ornament" />
       <GallerySection />
       <SectionDivider variant="fade" />

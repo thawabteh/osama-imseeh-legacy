@@ -62,7 +62,7 @@ const BookDetail = () => {
           {/* Back link */}
           <motion.div {...fadeInUp}>
             <Link
-              to="/#blog"
+              to="/#books"
               className="inline-flex items-center gap-2 text-primary mb-12 hover:gap-4 transition-all duration-300"
               style={{ ...arFont, fontWeight: 700 }}
             >
