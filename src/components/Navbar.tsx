@@ -10,7 +10,7 @@ const COPY = {
       { label: "الرؤية", href: "#about" },
       { label: "الدراسات", href: "#studies" },
       { label: "المكتبة", href: "#books" },
-      { label: "مقاطع", href: "#videos" },
+      { label: "فيديو", href: "#videos" },
       { label: "محطات", href: "#gallery" },
       { label: "تواصل", href: "#contact" },
     ],

@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
-import gp1 from "@/assets/photo-gallery-01.jpg";
 import gp2 from "@/assets/photo-gallery-02.jpg";
 import gp4 from "@/assets/photo-gallery-04.jpg";
 import gp5 from "@/assets/photo-gallery-05.jpg";
@@ -12,13 +11,10 @@ import gp7 from "@/assets/photo-gallery-07.jpg";
 import gp9 from "@/assets/photo-gallery-09.jpg";
 import gp10 from "@/assets/photo-gallery-10.jpg";
 import gp11 from "@/assets/photo-gallery-11.jpg";
-import gp12 from "@/assets/photo-gallery-12.jpg";
 import gp13 from "@/assets/photo-gallery-13.jpg";
 import gp14 from "@/assets/photo-gallery-14.jpg";
 import gp16 from "@/assets/photo-gallery-16.jpg";
-import gp17 from "@/assets/photo-gallery-17.jpg";
 import gp18 from "@/assets/photo-gallery-18.jpg";
-import gp19 from "@/assets/photo-gallery-19.jpg";
 import gp20 from "@/assets/photo-gallery-20.jpg";
 import hlHonor from "@/assets/highlight-royal-honor.jpg";
 import hlLecture from "@/assets/highlight-lecture.jpg";
@@ -28,8 +24,8 @@ const featuredImages = [hlHonor, hlLecture];
 
 // Studio portraits ordered so neighbouring photos look distinct.
 const images = [
-  gp1, gp2, gp6, gp4, gp5, gp12, gp11, gp7,
-  gp10, gp17, gp9, gp14, gp16, gp18, gp13, gp19, gp20,
+  gp2, gp6, gp4, gp5, gp11, gp7,
+  gp10, gp9, gp14, gp16, gp18, gp13, gp20,
 ];
 
 // Every image, in display order, for the click-to-expand lightbox.
