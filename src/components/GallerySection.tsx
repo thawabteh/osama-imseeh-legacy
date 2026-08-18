@@ -4,13 +4,9 @@ import { fadeInUp, withDelay, quinticEase } from "@/lib/animations";
 import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import gp2 from "@/assets/photo-gallery-02.jpg";
-import gp4 from "@/assets/photo-gallery-04.jpg";
-import gp5 from "@/assets/photo-gallery-05.jpg";
 import gp6 from "@/assets/photo-gallery-06.jpg";
-import gp7 from "@/assets/photo-gallery-07.jpg";
 import gp9 from "@/assets/photo-gallery-09.jpg";
 import gp10 from "@/assets/photo-gallery-10.jpg";
-import gp11 from "@/assets/photo-gallery-11.jpg";
 import gp13 from "@/assets/photo-gallery-13.jpg";
 import gp14 from "@/assets/photo-gallery-14.jpg";
 import gp16 from "@/assets/photo-gallery-16.jpg";
@@ -24,8 +20,8 @@ const featuredImages = [hlHonor, hlLecture];
 
 // Studio portraits ordered so neighbouring photos look distinct.
 const images = [
-  gp2, gp6, gp4, gp5, gp11, gp7,
-  gp10, gp9, gp14, gp16, gp18, gp13, gp20,
+  gp2, gp6, gp10, gp9, gp14,
+  gp16, gp18, gp13, gp20,
 ];
 
 // Every image, in display order, for the click-to-expand lightbox.
