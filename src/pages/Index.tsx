@@ -6,7 +6,7 @@ import AchievementsSection from "@/components/AchievementsSection";
 import StudiesSection from "@/components/StudiesSection";
 import QuoteSection from "@/components/QuoteSection";
 import BooksSection from "@/components/BooksSection";
-import VideosSection from "@/components/VideosSection";
+import VideosSection from "@/lib/src/components/VideosSection";
 import VideoSection from "@/components/VideoSection";
 import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
